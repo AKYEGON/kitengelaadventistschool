@@ -346,13 +346,28 @@ body {
         box-shadow: none;
       }
 
-      .dropdown:hover .dropdown-content {
-        display: none;
-      }
+      
+      
+		/* Hide dropdowns by default */
+.dropdown-content {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute; /* if you want it floating under the parent */
+  background: white;  /* adjust to your theme */
+  z-index: 1000;
+}
 
-      .dropdown.active .dropdown-content {
-        display: block;
-      }
+/* Show on hover (desktop) */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Show when "active" (mobile tap) */
+.dropdown.active .dropdown-content {
+  display: block;
+}
     }
 	.foot{
 	background-color:#98AFC7
@@ -558,6 +573,19 @@ body {
 
 <!-- JavaScript to Load Dynamic Requirements -->
 <script>
+
+	<script>
+  // Enable tap-to-open on mobile
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      // prevent the link from navigating immediately
+      e.preventDefault();
+      // toggle the dropdown
+      this.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+	
   function showRequirements() {
     const selected = document.getElementById("class-select").value;
     const box = document.getElementById("requirements-box");
@@ -986,4 +1014,5 @@ body {
 </script>
 </body>
 </html>
+
 
