@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitengela Adventist School</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+	  
+    }
+ body {
+      margin: 0;
+      height: 100vh;
+      background: white;
+      
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: moveStars 10s linear infinite;
+    }
+
+    @keyframes moveStars {
+      0% {transform: translateY(0);}
+      100% {transform: translateY(100vh);}
+    }
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #82CAFF;
+    }
+
+    .hero-section img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+    }
+
+    .hero-text {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+
+    .content-section {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+      line-height: 1.6;
+	  
+    }
+
+    h1, h3 {
+      text-align: center;
+      color: #82CAFF;
+    }
+
+    .section-divider {
+      margin: 0 auto;
+      width: 80%;
+      border: 1px solid #82CAFF;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .features img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .footer {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footer section {
+      flex: 1 1 250px;
+      margin: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+      }
+
+      .hero-text {
+        font-size: 2rem;
+        margin-left: 20px;
+      }
+    }
+	* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #82CAFF;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header img {
+      width: 120px;
+      height: auto;
+    }
+
+    .header-text {
+      margin-left: 20px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .header-text p {
+      margin: 5px 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: black;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    .navbar-regular {
+      background-color: white;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-regular li {
+      position: relative;
+    }
+
+    .navbar-regular li a {
+      display: block;
+      color: black;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar-regular li a:hover {
+      background-color: #1589FF;
+      color: white;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 180px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .dropdown-content a {
+      padding: 12px 16px;
+      display: block;
+      text-align: left;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main-banner {
+      display: flex;
+      flex-direction: column;
+      padding: 50px;
+      background: url('bgr.jpg') no-repeat center center/cover;
+      color: white;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .main-banner h2 {
+      font-size: 36px;
+    }
+
+    .content-section {
+      padding: 30px 50px;
+      background-color: #f9f9f9;
+    }
+
+    .content-section h1 {
+      text-align: center;
+      color: #82CAFF;
+    }
+
+    .content-section hr {
+      width: 40%;
+      margin: 10px auto;
+      border: 1px solid #82CAFF;
+    }
+
+    .content-section p {
+      font-size: 18px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-regular {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .navbar-regular.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .navbar-regular li {
+        width: 100%;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: none;
+      }
+
+      .dropdown.active .dropdown-content {
+        display: block;
+      }
+    }
+	.foot{
+	background-color:#98AFC7
+	}
+	.typewriter {
+      font-family: doublespace;
+      font-size: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #000;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+	  display:inline-block;
+   text-overflow:ellipsis;
+   }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .container {
+      width: fit-content;
+      margin: 100px auto;
+    }
+	.typewriter-container{
+	width:100%;
+	overflow:hidden;
+	white-space:nowrap;
+	}
+	.typewriter-text{
+	font-size:1px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	display:inline-block;
+	}
+	
+	
+	
+  </style>
+</head>
+<body>
+ <section class="header">
+    <img src="kaslogo.jpg" alt="School Logo">
+	 
+    <div class="header-text">
+      
+      <div class="typewriter" id="typewriter"></div>
+<div class="typewriter-container">
+<script>
+  const phrases = [
+    "Welcome to Kitengela Adventist School.",
+    "With God We Excel.",
+    "Explore. Learn. Grow.",
+    "Admissions Open Now!"
+  ];
+
+  let currentPhrase = 0;
+  let currentChar = 0;
+  let isDeleting = false;
+  const typeSpeed = 100;
+  const eraseSpeed = 50;
+  const delayBetween = 1500; // Delay between full phrase
+
+  const el = document.getElementById("typewriter");
+
+  function type() {
+    const text = phrases[currentPhrase];
+    if (isDeleting) {
+      el.textContent = text.substring(0, currentChar--);
+    } else {
+      el.textContent = text.substring(0, currentChar++);
+    }
+
+    if (!isDeleting && currentChar === text.length) {
+      isDeleting = true;
+      setTimeout(type, delayBetween);
+    } else if (isDeleting && currentChar === 0) {
+      isDeleting = false;
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+      setTimeout(type, 500);
+    } else {
+      setTimeout(type, isDeleting ? eraseSpeed : typeSpeed);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 500);
+  });
+</script>
+</div>
+    </div>
+	
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+
+  <ul class="navbar-regular" id="navbar">
+    <li class="dropdown">
+      <a href="2home2.html">Our School</a>
+      <ul class="dropdown-content">
+        <li><a href="aboutus.html">About Us</a></li>
+        
+        <li><a href="results.html">Academic Results</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="education.html">Education</a>
+      <ul class="dropdown-content">
+        <li><a href="jss.html">Junior Secondary School</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="admission.html">Admission</a>
+      <ul class="dropdown-content">
+        <li><a href="process.html">Process</a></li>
+        <li><a href="fees.html">School Fees</a></li>
+        
+        
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a href="school-life.html">School Life</a>
+      <ul class="dropdown-content">
+        <li><a href="uniform.html">School Uniform</a></li>
+        <li><a href="bus.html">Bus Routes</a></li>
+        <li><a href="news.html">News & Events</a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+  </br>
+  <script>
+    for (let i = 0; i < 100; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * -100 + "vh";
+      star.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+  
+  <!-- Class Requirements Section -->
+<section class="content-section" id="class-requirements">
+  <h2 style="color: #1589FF; text-align: center;">Admission Requirements by Class</h2>
+
+  <label for="class-select">Select Class:</label>
+  <select id="class-select" onchange="showRequirements()" style="width: 100%; padding: 10px; margin: 15px 0; font-size: 16px;">
+    <option value="">-- Choose Class --</option>
+	 <option value="PlayGroup">Play Group</option>
+    <option value="PP1">Pre-Primary 1</option>
+	<option value="PP2">Pre-Primary 2 </option>
+	<option value="Grade1">Grade 1 </option>
+	<option value="Grade2">Grade 2 </option>
+	<option value="Grade3">Grade 3 </option>
+	<option value="Grade4">Grade 4 </option>
+	<option value="Grade5">Grade 5 </option>
+	<option value="Grade6">Grade 6 </option>
+    <option value="Grade7">Grade 7 (Junior Secondary)</option>
+	 <option value="Grade8">Grade 8 (Junior Secondary)</option>
+  </select>
+
+  <div id="requirements-box" class="requirements-box" style="display:none;"></div>
+</section>
+
+<!-- Style for the Box & Table -->
+<style>
+  .requirements-box {
+    margin-top: 20px;
+    background: #f0f8ff;
+    padding: 20px;
+    border-left: 4px solid #1589FF;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  #requirements-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  #requirements-box th, #requirements-box td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+
+  #requirements-box th {
+    background: #1589FF;
+    color: white;
+  }
+</style>
+
+<!-- JavaScript to Load Dynamic Requirements -->
+<script>
+  function showRequirements() {
+    const selected = document.getElementById("class-select").value;
+    const box = document.getElementById("requirements-box");
+
+    const requirements = {
+      PlayGroup: `
+        
+    <h3>Playgroup Book & Stationery Requirements</h3>
+    <ul>
+      <li>7 Exercise Books (96 pages: 1/2 inch, 2 squared, 5 ruled, 1 plain)</li>
+      <li>Well covered with a brown cover</li>
+      <li>1 packet of crayons – Superfine</li>
+      <li>3 pencils – Blue Office Point</li>
+      <li>2 rubbers</li>
+      <li>1 sharpener rubber</li>
+      <li>2 manila papers</li>
+      <li>1 luminous paper</li>
+      <li>Portfolio</li>
+      <li>1 packet watercolors</li>
+      <li>4 tissue papers</li>
+      <li>Ream paper</li>
+      <li>Building blocks</li>
+      <li>Modelling clay (1kg)</li>
+    </ul>
+
+    <h4>Recommended Textbooks</h4>
+    <table border="1" cellpadding="8">
+      <tr><th>Learning Area</th><th>Title</th></tr>
+      <tr><td>Mathematics</td><td>Queenex Mathematics Practice Book Play Book Rationalised</td></tr>
+      <tr><td>Language Activities</td><td>Queenex Language Practice Book Play Book Rationalised</td></tr>
+      <tr><td>CRE Activities</td><td>Queenex Religious Practice Book Play Book Rationalised</td></tr>
+      <tr><td>Environmental</td><td>Queenex Environmental Practice Book Play Book Rationalised</td></tr>
+      <tr><td>Supplementary</td><td>Premier Revision, Jambo Coloured Book 1, EKAS Colouring Book 1</td></tr>
+    </table>
+  `,
+     
+      Grade7: `
+        <h4>Requirements for Grade 7 (Junior Secondary)</h4>
+        <ul>
+          <li>16 A4 Exercise Books (120 pages) – 2 squared, 13 ruled, well covered</li>
+          <li>Blue, black, red pens (3 black, 2 blue, 1 red)</li>
+          <li>2 Bic biros</li>
+          <li>30 cm ruler, rubber, sharpener</li>
+          <li>2 manilla papers</li>
+          <li>1 glue stick & 1 office glue</li>
+          <li>Swimming costume (PHE lessons)</li>
+          <li>Kamusi (New Edition)</li>
+          <li>Oxford English Dictionary</li>
+          <li>Geometrical set</li>
+          <li>Good News Bible (New Version)</li>
+        </ul>
+
+        <h5>Booklist</h5>
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Title</th>
+              <th>Publisher</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Maths</td><td>Smart Mind Math</td><td>Smartmind</td></tr>
+            <tr><td>English</td><td>Spotlight English</td><td>Spotlight</td></tr>
+            <tr><td>Kiswahili</td><td>Ketesi Kiswahili</td><td>Oxford</td></tr>
+            <tr><td>CRE</td><td>Spotlight CRE</td><td>Spotlight</td></tr>
+            <tr><td>SST/Life Skills</td><td>Spotlight SST</td><td>Spotlight</td></tr>
+            <tr><td>Science</td><td>Smartmind Science</td><td>Smartmind</td></tr>
+            <tr><td>Sports</td><td>Spotlight PE</td><td>Spotlight</td></tr>
+            <tr><td>Creative Arts</td><td>Spotlight Creative Arts</td><td>Spotlight</td></tr>
+            <tr><td>Agriculture</td><td>Top Scholar Pre-Tech</td><td>Top Scholar</td></tr>
+            <tr><td>Nutrition</td><td>Top Scholar Tech. Studies</td><td>Top Scholar</td></tr>
+            <tr><td>Encyclopedia</td><td>Highflyer Series</td><td>KLB</td></tr>
+            <tr><td>Kamusi</td><td>Kamusi (New Edition)</td><td>Oxford</td></tr>
+            <tr><td>Dictionary</td><td>English Oxford Dictionary</td><td>Oxford</td></tr>
+          </tbody>
+        </table>
+      `,
+	  Grade8: `
+  <h4>Requirements for Grade 8 (Junior Secondary)</h4>
+  <ul>
+    <li>16 A4 Exercise Books (120 pages) – 2 squared, 13 ruled, well covered</li>
+    <li>3 black, 2 blue, 1 red BIC biro pens</li>
+    <li>2 blue Officepoint pencils</li>
+    <li>30 cm Haco ruler</li>
+    <li>1 Rubber (Staedtler or Pelican)</li>
+    <li>White apron and white head gear</li>
+    <li>2 Manilla papers, 2 Luminous papers & office glue</li>
+    <li>Swimming costume (PHE lessons)</li>
+    <li>Good News Bible (Version)</li>
+    <li>Kamusi (New Edition)</li>
+    <li>Geometrical set</li>
+    <li>English Oxford Dictionary</li>
+    <li>Ream paper</li>
+  </ul>
+
+  <h5>Booklist</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Title</th>
+        <th>Publisher</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Maths</td><td>Smart Mind Math</td><td>Smartmind</td></tr>
+      <tr><td>English</td><td>Spotlight English</td><td>Spotlight</td></tr>
+      <tr><td>Kiswahili</td><td>Kielezi Kiswahili</td><td>Oxford</td></tr>
+      <tr><td>Pre-Technical</td><td>Top Scholar Pre-Technical Studies</td><td>KLB</td></tr>
+      <tr><td>Agriculture & Nutrition</td><td>Top Scholar</td><td>KLB</td></tr>
+      <tr><td>Creative Arts & Sports</td><td>Spotlight PE</td><td>Spotlight</td></tr>
+      <tr><td>CRE</td><td>Spotlight CRE</td><td>Spotlight</td></tr>
+      <tr><td>SST/Life Skills</td><td>Spotlight Social Studies</td><td>Spotlight</td></tr>
+      <tr><td>Integrated Science</td><td>Smartmind Science</td><td>Smartmind</td></tr>
+      <tr><td>Kurunzi ya Insha</td><td>—</td><td>—</td></tr>
+      <tr><td>Good News Bible</td><td>—</td><td>—</td></tr>
+      <tr><td>Encyclopedia</td><td>Highflyer Series</td><td>—</td></tr>
+    </tbody>
+  </table>
+     `,
+  Grade6: `
+  <h4>Requirements for Grade 6 (Upper Primary)</h4>
+  <ul>
+    <li>16 A4 Exercise Books (120 pages) – 2 squared, 13 ruled, well covered</li>
+    <li>3 black, 2 blue BIC pens</li>
+    <li>2 blue Officepoint pencils</li>
+    <li>1 Haco ruler</li>
+    <li>1 rubber</li>
+    <li>Portfolio</li>
+    <li>Tissue paper</li>
+    <li>Manilla papers (2)</li>
+    <li>Water colours</li>
+    <li>Sewing kit</li>
+    <li>White apron & white head gear</li>
+    <li>2 Luminous papers & office glue</li>
+    <li>Swimming costume (PHE lessons)</li>
+    <li>Good News Bible (Version)</li>
+    <li>Modelling clay (arts & crafts lessons)</li>
+    <li>Ream paper</li>
+  </ul>
+
+  <h5>Booklist</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Learning Area</th>
+        <th>Title</th>
+        <th>Publisher</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Mathematics</td><td>Spotlight Mathematics</td><td>Spotlight</td></tr>
+      <tr><td>English</td><td>Roots English</td><td>Queenex</td></tr>
+      <tr><td>Readers</td><td>The Hut of the President</td><td>Queenex</td></tr>
+      <tr><td>Kiswahili</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+      <tr><td>Social Studies</td><td>Mentor CRE</td><td>Smart Ushindi</td></tr>
+      <tr><td>CRE Activities</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+      <tr><td>Science</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+      <tr><td>Technology</td><td>E&E</td><td>Smart Beginners</td></tr>
+      <tr><td>Agriculture & Nutrition</td><td>Spotlight Agriculture</td><td>Spotlight</td></tr>
+      <tr><td>Creative Arts</td><td>Targeters</td><td>Targeters</td></tr>
+    </tbody>
+  </table>
+    `,
+    Grade5: `
+  <h4>Requirements for Grade 5 (Upper Primary)</h4>
+  <ul>
+    <li>16 A4 Exercise Books (120 pages) – 2 squared, 13 ruled, well covered</li>
+    <li>2 black, 2 blue BIC pens</li>
+    <li>3 Officepoint pencils</li>
+    <li>1 Haco ruler</li>
+    <li>1 rubber</li>
+    <li>Portfolio</li>
+    <li>Tissue paper</li>
+    <li>Manilla papers (2)</li>
+    <li>Water colours</li>
+    <li>Sewing kit</li>
+	<li>1 pkt super Fine Wax crayons</li>
+    <li>White apron & white head gear</li>
+    <li>2 Luminous papers & office glue</li>
+    <li>Swimming costume (PHE lessons)</li>
+    <li>Good News Bible (Version)</li>
+    <li>Modelling clay (arts & crafts lessons)</li>
+    <li>Ream paper</li>
+  </ul>
+
+  <h5>Booklist</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Learning Area</th>
+        <th>Title</th>
+        <th>Publisher</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Mathematics</td><td>Lets Do Mathematics</td><td>Oxford</td></tr>
+      <tr><td>English</td><td>Access and Learn</td><td>Access</td></tr>
+      <tr><td>Readers</td><td>Malit Makes a Decision</td><td>Story Moja</td></tr>
+      <tr><td>Kiswahili</td><td>Kiswahili Daidisi</td><td>Story Moja</td></tr>
+      <tr><td>Social Studies</td><td>Our Lives Today</td><td>Oxford</td></tr>
+      <tr><td>CRE Activities</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+      <tr><td>Science and Technology</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+      <tr><td>Agriculture & Nutrition</td><td>Spotlight Agriculture</td><td>Spotlight</td></tr>
+      <tr><td>Creative Arts</td><td>Spotlight</td><td>Spotlight</td></tr>
+	  <tr><td>Targeter</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  `,
+  Grade4: `
+  <h4>Requirements for Grade 4 (Upper Primary)</h4>
+  <ul>
+    <li>16 A4 Exercise Books (120 pages) – 2 squared, 13 ruled, well covered</li>
+    <li>2 black, 2 blue BIC pens</li>
+    <li>3 Officepoint pencils</li>
+    <li>1 Haco ruler</li>
+    <li>1 rubber</li>
+    <li>Portfolio</li>
+    <li>Tissue paper</li>
+    <li>Manilla papers (2)</li>
+    <li>Water colours</li>
+    <li>Sewing kit</li>
+	<li>1 pkt super Fine Wax crayons</li>
+    <li>White apron & white head gear</li>
+    <li>2 Luminous papers & office glue</li>
+    <li>Swimming costume (PHE lessons)</li>
+    <li>Good News Bible (Version)</li>
+    <li>Modelling clay (arts & crafts lessons)</li>
+    <li>Ream paper</li>
+  </ul>
+
+  <h5>Booklist</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Learning Area</th>
+        <th>Title</th>
+        <th>Publisher</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Mathematics</td><td>Lets Do Mathematics</td><td>Oxford</td></tr>
+      <tr><td>English</td><td>Access and Learn</td><td>Access</td></tr>
+      <tr><td>Readers</td><td>The New Comer And Other Stories</td><td>Story Moja</td></tr>
+      <tr><td>Kiswahili</td><td>Kiswahili Daidisi</td><td>Story Moja</td></tr>
+	  <tr><td>Kusoma</td><td>Asiyeskia La Mkuu</td><td>KLB</td></tr>
+      <tr><td>Social Studies</td><td>Our Lives Today</td><td>Oxford</td></tr>
+      <tr><td>CRE Activities</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+      <tr><td>Science and Technology</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+      <tr><td>Agriculture & Nutrition</td><td>Spotlight Agriculture</td><td>Spotlight</td></tr>
+      <tr><td>Creative Arts</td><td>Spotlight</td><td>Spotlight</td></tr>
+	  <tr><td>Targeter</td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  `,
+  Grade3: `
+  <h4>Grade 3 Book & Stationery Requirements</h4>
+      <ul>
+        <li>13 Exercise Books 120 Pages (2 Squared, 1 Plain, 10 ruled)</li>
+        <li>2 BIC biro pens (2 black, 2 blue)</li>
+        <li>1 pkt radius crayons</li>
+        <li>4 radius Pencils</li>
+        <li>1 radius Ruler</li>
+        <li>1 rubber</li>
+        <li>Portfolio</li>
+        <li>3 Bella Tissue paper</li>
+        <li>Water Colours</li>
+        <li>Ream paper</li>
+      </ul>
+      <h4>Books List</h4>
+      <table border="1" cellpadding="8">
+        <tr><th>Learning Area</th><th>Title</th><th>Publisher/Author</th></tr>
+        <tr><td>Mathematics</td><td>Spotlight Mathematics</td><td>Spotlight</td></tr>
+        <tr><td>English</td><td>Spotlight New Edition</td><td>Spotlight</td></tr>
+        <tr><td>Readers</td><td>Gogo Joins Ballet</td><td>Moran</td></tr>
+        <tr><td>Kiswahili</td><td>Kiswahili Dadisi</td><td>Oxford</td></tr>
+        <tr><td>Kusoma</td><td>Pole Punda</td><td>Phoenix</td></tr>
+        <tr><td>CRE Activities</td><td>Sport Light</td><td>Spotlight</td></tr>
+        <tr><td>Environmental</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+        <tr><td>Creative Arts</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+		 <tr><td>High Flyer</td><td></td><td></td></tr>
+      </table>
+        `,
+	Grade2: `
+  <h4>Grade 2 Book & Stationery Requirements</h4>
+      <ul>
+        <li>13 Exercise Books 120 Pages (2 Squared, 1 Plain, 10 ruled)</li>
+        <li>2 BIC biro pens (2 black, 2 blue)</li>
+        <li>1 pkt radius crayons</li>
+        <li>4 radius Pencils</li>
+        <li>1 radius Ruler</li>
+        <li>1 rubber</li>
+        <li>Portfolio</li>
+        <li>3 Bella Tissue paper</li>
+        <li>Water Colours</li>
+        <li>Ream paper</li>
+      </ul>
+      <h4>Books List</h4>
+      <table border="1" cellpadding="8">
+        <tr><th>Learning Area</th><th>Title</th><th>Publisher/Author</th></tr>
+        <tr><td>Mathematics</td><td>Spotlight Mathematics</td><td>Spotlight</td></tr>
+        <tr><td>English</td><td>Spotlight New Edition</td><td>Spotlight</td></tr>
+        <tr><td>Readers</td><td>Gogo Joins Ballet</td><td>Moran</td></tr>
+        <tr><td>Kiswahili</td><td>Kiswahili Dadisi</td><td>Oxford</td></tr>
+        <tr><td>Kusoma</td><td>Pole Punda</td><td>Phoenix</td></tr>
+        <tr><td>CRE Activities</td><td>Sport Light</td><td>Spotlight</td></tr>
+        <tr><td>Environmental</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+        <tr><td>Creative Arts</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+		 <tr><td>High Flyer</td><td></td><td></td></tr>
+      </table>
+        `,
+		Grade1: `
+  <h4>Grade 1 Book & Stationery Requirements</h4>
+      <ul>
+        <li>13 Exercise Books 120 Pages (2 Squared, 1 Plain, 10 ruled)</li>
+        <li>2 BIC biro pens (2 black, 2 blue)</li>
+        <li>1 pkt radius crayons</li>
+        <li>4 radius Pencils</li>
+        <li>1 radius Ruler</li>
+        <li>1 rubber</li>
+        <li>Portfolio</li>
+        <li>3 Bella Tissue paper</li>
+        <li>Water Colours</li>
+        <li>Ream paper</li>
+      </ul>
+      <h4>Books List</h4>
+      <table border="1" cellpadding="8">
+        <tr><th>Learning Area</th><th>Title</th><th>Publisher/Author</th></tr>
+        <tr><td>Mathematics</td><td>Spotlight Mathematics</td><td>Spotlight</td></tr>
+        <tr><td>English</td><td>Spotlight New Edition</td><td>Spotlight</td></tr>
+        <tr><td>Readers</td><td>Gogo Joins Ballet</td><td>Moran</td></tr>
+        <tr><td>Kiswahili</td><td>Kiswahili Dadisi</td><td>Oxford</td></tr>
+        <tr><td>Kusoma</td><td>Pole Punda</td><td>Phoenix</td></tr>
+        <tr><td>CRE Activities</td><td>Sport Light</td><td>Spotlight</td></tr>
+        <tr><td>Environmental</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+        <tr><td>Creative Arts</td><td>Smart Beginners</td><td>Story Moja</td></tr>
+		 <tr><td>High Flyer</td><td></td><td></td></tr>
+      </table>
+        `,
+		PP2: `
+    <h4>PP2 Book & Stationery Requirements</h4>
+    <ul>
+      <li>7 Exercise Books (96 pages) – 1/2 inch, 2 squared, 5 ruled, 1 plain</li>
+      <li>Well covered with a brown cover</li>
+      <li>1 packet of crayons – Supreme</li>
+      <li>3 pencils – Blue Office Point</li>
+      <li>2 rubbers</li>
+      <li>1 sharpener / rubber</li>
+      <li>2 manila papers</li>
+      <li>2 luminous papers</li>
+      <li>Portfolio</li>
+      <li>1 packet of water colors</li>
+      <li>3 tissue papers</li>
+      <li>Ream paper</li>
+    </ul>
+
+    <h4>Recommended Textbooks</h4>
+    <table border="1" cellpadding="8">
+      <tr><th>Learning Area</th><th>Title</th><th>Publisher/Author</th></tr>
+      <tr><td>Mathematics</td><td>Spotlight Maths</td><td>Spotlight</td></tr>
+      <tr><td>Language Activities</td><td>Spotlight Language Activities</td><td>Spotlight</td></tr>
+      <tr><td>Readers</td><td>Kuku Ad The Red Chicks</td><td>Queenex</td></tr>
+      <tr><td>Kiswahili Kusoma</td><td>Chanzo cha Kiswahili</td><td>Spotlight</td></tr>
+      <tr><td>CRE Activities</td><td>Spotlight CRE</td><td>Spotlight</td></tr>
+      <tr><td>Environmental Activities</td><td>Spotlight Environmental</td><td>Spotlight</td></tr>
+      <tr><td>Creative & Psychomotor</td><td>Know More (Revised Edition)</td><td>Story Moja</td></tr>
+      <tr><td>Encyclopedia</td><td>Premier Encyclopedia</td><td>Premier</td></tr>
+    </table>
+  `,
+  PP1: `
+    <h4>PP1 Book & Stationery Requirements</h4>
+    <ul>
+      <li>7 Exercise Books (96 pages) – 1/2 inch, 2 squared, 5 ruled, 1 plain</li>
+      <li>Well covered with a brown cover</li>
+      <li>1 packet of crayons – Supreme</li>
+      <li>3 pencils – Blue Office Point</li>
+      <li>2 rubbers</li>
+      <li>1 sharpener / rubber</li>
+      <li>2 manila papers</li>
+      <li>2 luminous papers</li>
+      <li>Portfolio</li>
+      <li>1 packet of water colors</li>
+      <li>3 tissue papers</li>
+      <li>Ream paper</li>
+    </ul>
+
+    <h4>Recommended Textbooks</h4>
+    <table border="1" cellpadding="8">
+      <tr><th>Learning Area</th><th>Title</th><th>Publisher/Author</th></tr>
+      <tr><td>Mathematics</td><td>Spotlight Maths</td><td>Spotlight</td></tr>
+      <tr><td>Language Activities</td><td>Spotlight Language Activities</td><td>Spotlight</td></tr>
+      <tr><td>Readers</td><td>The Fat Cat</td><td>Queenex</td></tr>
+      <tr><td>Kiswahili Kusoma</td><td>Chanzo cha Kiswahili</td><td>Spotlight</td></tr>
+      <tr><td>CRE Activities</td><td>Spotlight CRE</td><td>Spotlight</td></tr>
+      <tr><td>Environmental Activities</td><td>Spotlight Environmental</td><td>Spotlight</td></tr>
+      <tr><td>Creative & Psychomotor</td><td>Know More (Revised Edition)</td><td>Story Moja</td></tr>
+      <tr><td>Encyclopedia</td><td>Premier Encyclopedia</td><td>Premier</td></tr>
+    </table>
+  `,
+  
+    };
+
+    if (requirements[selected]) {
+      box.innerHTML = requirements[selected];
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  }
+</script>
+
+<script>
+  function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+
+    // For dropdowns inside mobile navbar
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach(drop => {
+      drop.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+    });
+  }
+</script>
+</body>
+</html>
