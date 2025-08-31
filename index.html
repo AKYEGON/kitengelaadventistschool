@@ -1114,6 +1114,15 @@ responsibility, and excellence. Whether you're a parent seeking the best start f
   .flip-card-back {
     transform: rotateY(180deg);
   }
+
+	.submenu {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+.dropdown.active .submenu {
+  display: block;
+}
 </style>
 
 <!-- Flip Card 1 -->
@@ -1217,7 +1226,15 @@ and traditions, our learners gain a deeper appreciation of their heritage
  </div>
 </section>
   
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+	  // Toggle dropdown on click
+document.querySelectorAll(".dropdown > a").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault(); // prevent link from navigating
+    link.parentElement.classList.toggle("active");
+  });
+});
+  </script>
 <script>AOS.init();</script>
   <section class="video-section"  data-aos="fade-up">
   <video autoplay muted loop playsinline class="background-video">
@@ -1937,6 +1954,7 @@ function showSlides() {
 </script>
 </body>
 </html>
+
 
 
 
