@@ -463,117 +463,6 @@
 </html>
 
 
-<style>
-  	
-	
-	
-  </style>
-</head>
-<body>
- <section class="header">
-    <img src="kaslogo.jpg" alt="School Logo">
-	 
-    <div class="header-text">
-      
-      <div class="typewriter" id="typewriter"></div>
-<div class="typewriter-container">
-<script>
-  const phrases = [
-    "Welcome to Kitengela Adventist School.",
-    "With God We Excel.",
-    "Explore. Learn. Grow.",
-    "Admissions Open Now!"
-  ];
-
-  let currentPhrase = 0;
-  let currentChar = 0;
-  let isDeleting = false;
-  const typeSpeed = 100;
-  const eraseSpeed = 50;
-  const delayBetween = 1500; // Delay between full phrase
-
-  const el = document.getElementById("typewriter");
-
-  function type() {
-    const text = phrases[currentPhrase];
-    if (isDeleting) {
-      el.textContent = text.substring(0, currentChar--);
-    } else {
-      el.textContent = text.substring(0, currentChar++);
-    }
-
-    if (!isDeleting && currentChar === text.length) {
-      isDeleting = true;
-      setTimeout(type, delayBetween);
-    } else if (isDeleting && currentChar === 0) {
-      isDeleting = false;
-      currentPhrase = (currentPhrase + 1) % phrases.length;
-      setTimeout(type, 500);
-    } else {
-      setTimeout(type, isDeleting ? eraseSpeed : typeSpeed);
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(type, 500);
-  });
-</script>
-</div>
-    </div>
-	
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </section>
-
-  <ul class="navbar-regular" id="navbar">
-    <li class="dropdown">
-      <a href="index.html">Our School</a>
-      <ul class="dropdown-content">
-        <li><a href="aboutus.html">About Us</a></li>
-        
-        <li><a href="results.html">Academic Results</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="education.html">Education</a>
-      <ul class="dropdown-content">
-        <li><a href="jss.html">Junior Secondary School</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="admission.html">Admission</a>
-      <ul class="dropdown-content">
-        <li><a href="process.html">Process</a></li>
-        <li><a href="fees.html">School Fees</a></li>
-        
-        
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="school-life.html">School Life</a>
-      <ul class="dropdown-content">
-        <li><a href="uniform.html">School Uniform</a></li>
-        <li><a href="bus.html">Bus Routes</a></li>
-        <li><a href="news.html">News & Events</a></li>
-      </ul>
-    </li>
-    <li><a href="gallery.html">Gallery</a></li>
-  </ul>
-  </br>
-  <script>
-    for (let i = 0; i < 100; i++) {
-      let star = document.createElement("div");
-      star.className = "star";
-      star.style.left = Math.random() * 100 + "vw";
-      star.style.top = Math.random() * -100 + "vh";
-      star.style.animationDuration = (Math.random() * 5 + 5) + "s";
-      document.body.appendChild(star);
-    }
-  </script>
-  
   <!-- Class Requirements Section -->
 <section class="content-section" id="class-requirements">
   <h2 style="color: #1589FF; text-align: center;">Admission Requirements by Class</h2>
@@ -1070,6 +959,7 @@
 </script>
 </body>
 </html>
+
 
 
 
