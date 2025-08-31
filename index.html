@@ -344,18 +344,27 @@ body {
         width: 100%;
       }
 
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-      }
+      
+		/* Hide dropdowns by default */
+.dropdown-content {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute; /* if you want it floating under the parent */
+  background: white;  /* adjust to your theme */
+  z-index: 1000;
+}
 
-      .dropdown:hover .dropdown-content {
-        display: none;
-      }
+/* Show on hover (desktop) */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-      .dropdown.active .dropdown-content {
-        display: block;
-      }
+/* Show when "active" (mobile tap) */
+.dropdown.active .dropdown-content {
+  display: block;
+}
     }
 	.foot{
 	background-color: #82CAFF
@@ -1045,6 +1054,20 @@ responsibility, and excellence. Whether you're a parent seeking the best start f
 </section>
   <div id="daily-verse" class="devotional-box"></div>
   <script>
+<script>
+  // Enable tap-to-open on mobile
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      // prevent the link from navigating immediately
+      e.preventDefault();
+      // toggle the dropdown
+      this.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
+
+	  
   const verses = [
     `"Train up a child in the way he should go." – Proverbs 22:6`,
     `"I can do all things through Christ who strengthens me." – Philippians 4:13`,
@@ -1954,6 +1977,7 @@ function showSlides() {
 </script>
 </body>
 </html>
+
 
 
 
