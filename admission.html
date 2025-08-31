@@ -573,18 +573,6 @@ body {
 
 <!-- JavaScript to Load Dynamic Requirements -->
 
-
-	<script>
-  // Enable tap-to-open on mobile
-  document.querySelectorAll(".dropdown > a").forEach(link => {
-    link.addEventListener("click", function (e) {
-      // prevent the link from navigating immediately
-      e.preventDefault();
-      // toggle the dropdown
-      this.parentElement.classList.toggle("active");
-    });
-  });
-</script>
 	<script>
   function showRequirements() {
     const selected = document.getElementById("class-select").value;
