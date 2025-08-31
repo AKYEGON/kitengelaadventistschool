@@ -620,7 +620,22 @@
     });
   });
 </script>
+		<script>
+  function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+
+    // For dropdowns inside mobile navbar
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach(drop => {
+      drop.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+    });
+  }
+</script>
 </body>
 </html>
+
 
 
