@@ -1197,6 +1197,42 @@ responsibility, and excellence. Whether you're a parent seeking the best start f
   </div>
 </section>
   <div id="daily-verse" class="devotional-box"></div>
+	<!-- Core Values Section -->
+<section class="content-section" data-aos="fade-up">
+  <h2 style="text-align:center; color:#1589FF;">Our Core Values</h2>
+  <div class="values-grid">
+    <div class="value-box">
+      <i class="fas fa-praying-hands"></i>
+      <h4>Faith</h4>
+    </div>
+    <div class="value-box">
+      <i class="fas fa-users"></i>
+      <h4>Respect</h4>
+    </div>
+    <div class="value-box">
+      <i class="fas fa-star"></i>
+      <h4>Excellence</h4>
+    </div>
+    <div class="value-box">
+      <i class="fas fa-heart"></i>
+      <h4>Love</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Devotional Box with Original JavaScript -->
+<div id="daily-verse" class="devotional-box"></div>
+<script>
+  const verses = [
+    `"Train up a child in the way he should go." – Proverbs 22:6`,
+    `"I can do all things through Christ who strengthens me." – Philippians 4:13`,
+    `"The fear of the Lord is the beginning of wisdom." – Proverbs 9:10`,
+    `"Let the little children come to me..." – Matthew 19:14`
+  ];
+  const verseEl = document.getElementById("daily-verse");
+  const random = Math.floor(Math.random() * verses.length);
+  verseEl.textContent = verses[random];
+</script>
   <script>
 <script>
   // Enable tap-to-open on mobile
@@ -2121,6 +2157,7 @@ function showSlides() {
 </script>
 </body>
 </html>
+
 
 
 
