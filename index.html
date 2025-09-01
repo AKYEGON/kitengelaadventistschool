@@ -298,13 +298,13 @@ body {
   border: 1px solid #82CAFF;
 }
 
-/* Core Values Grid */
+/* Core Values Grid (Reverted to Original Grid Layout) */
 .values-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 30px;
+  justify-content: center;
 }
 
 .value-box {
@@ -312,8 +312,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   padding: 20px;
-  max-width: 300px;
-  flex: 1 1 250px;
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -339,6 +337,12 @@ body {
   color: #555;
 }
 
+/* Responsive Design for Values Grid */
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr; /* Ensure vertical stacking on mobile */
+  }
+}
 /* Flip Cards */
 .flip-container {
   perspective: 1000px;
@@ -2161,6 +2165,7 @@ function showSlides() {
 </script>
 </body>
 </html>
+
 
 
 
