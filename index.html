@@ -1,1683 +1,1025 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitengela Adventist School</title>
-    <style>
-    /* Global Reset */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitengela Adventist School</title>
+  <style>
+  /* Global Reset */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, Verdana, sans-serif;
-    background: #f4f4f4;
-    overflow-x: hidden;
+  font-family: Arial, Verdana, sans-serif;
+  background: #f4f4f4;
+  overflow-x: hidden;
 }
 
 /* Star Animation */
 .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    animation: moveStars 10s linear infinite;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  animation: moveStars 10s linear infinite;
 }
 
 @keyframes moveStars {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh); }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
 }
 
 /* Header */
 .header {
-    background-color: #82CAFF;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  background-color: #82CAFF;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .header img {
-    width: 100px;
-    height: auto;
+  width: 100px;
+  height: auto;
 }
 
 .header-text {
-    margin-left: 15px;
-    flex: 1;
+  margin-left: 15px;
+  flex: 1;
 }
 
 .header-text h1 {
-    font-size: clamp(24px, 5vw, 28px);
-    color: #fff;
-    margin: 0;
+  font-size: clamp(24px, 5vw, 28px);
+  color: #fff;
+  margin: 0;
 }
 
 .header-text p {
-    margin: 5px 0;
-    font-size: clamp(14px, 3vw, 16px);
-    color: #fff;
+  margin: 5px 0;
+  font-size: clamp(14px, 3vw, 16px);
+  color: #fff;
 }
 
 /* Typewriter Animation */
 .typewriter {
-    font-family: Arial, sans-serif;
-    font-size: clamp(16px, 4vw, 20px);
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #000;
-    width: 0;
-    animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
-    display: inline-block;
-    text-overflow: ellipsis;
+  font-family: Arial, sans-serif;
+  font-size: clamp(16px, 4vw, 20px);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #000;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+  display: inline-block;
+  text-overflow: ellipsis;
 }
 
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
-    50% { border-color: transparent; }
+  50% { border-color: transparent; }
 }
 
 .typewriter-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* Menu Toggle */
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .menu-toggle span {
-    height: 3px;
-    width: 25px;
-    background: black;
-    margin: 4px 0;
-    transition: 0.3s;
+  height: 3px;
+  width: 25px;
+  background: black;
+  margin: 4px 0;
+  transition: 0.3s;
 }
 
 /* Navbar */
 .navbar-regular {
-    background-color: white;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-regular li {
-    position: relative;
+  position: relative;
 }
 
 .navbar-regular li a {
-    display: block;
-    color: black;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+  color: black;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-regular li a:hover {
-    background-color: #1589FF;
-    color: white;
+  background-color: #1589FF;
+  color: white;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 180px;
-    z-index: 1000;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  z-index: 1000;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .dropdown-content a {
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-    text-decoration: none;
-    color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  color: black;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content,
 .dropdown.active .dropdown-content {
-    display: block;
+  display: block;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Welcome Section */
 .welcome-section {
-    background-image: url('homeback.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: clamp(40px, 8vw, 60px) 20px;
-    border-radius: 10px;
-    position: relative;
-    z-index: 1;
+  background-image: url('homeback.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: clamp(40px, 8vw, 60px) 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 .welcome-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
-    border-radius: 10px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  border-radius: 10px;
 }
 
 .welcome-section * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .welcome-section h1 {
-    font-size: clamp(24px, 6vw, 36px);
-    color: #82CAFF;
-    text-align: center;
+  font-size: clamp(24px, 6vw, 36px);
+  color: #82CAFF;
+  text-align: center;
 }
 
 .welcome-section p {
-    font-size: clamp(14px, 3.5vw, 17px);
-    line-height: 1.6;
-    text-align: center;
+  font-size: clamp(14px, 3.5vw, 17px);
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* Title Container */
 .title-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 .line {
-    flex: 1;
-    height: 3px;
-    background: #87ceeb;
-    margin: 0 15px;
-    animation: fadeInRight 1s ease forwards;
+  flex: 1;
+  height: 3px;
+  background: #87ceeb;
+  margin: 0 15px;
+  animation: fadeInRight 1s ease forwards;
 }
 
 .title {
-    font-size: clamp(20px, 5vw, 24px);
-    font-weight: bold;
-    white-space: nowrap;
-    animation: fadeInRight 1s ease forwards;
-    animation-delay: 1s;
+  font-size: clamp(20px, 5vw, 24px);
+  font-weight: bold;
+  white-space: nowrap;
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 1s;
 }
 
 .line.right {
-    animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 @keyframes fadeInRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Counter Section */
 .counter-section {
-    background: #f0f8ff;
-    padding: clamp(40px, 8vw, 60px) 20px;
-    text-align: center;
+  background: #f0f8ff;
+  padding: clamp(40px, 8vw, 60px) 20px;
+  text-align: center;
 }
 
 .counter-section h2 {
-    color: #1589FF;
-    margin-bottom: 40px;
-    font-size: clamp(24px, 5vw, 32px);
+  color: #1589FF;
+  margin-bottom: 40px;
+  font-size: clamp(24px, 5vw, 32px);
 }
 
 .counter-box {
-    width: clamp(120px, 25vw, 150px);
-    font-size: clamp(16px, 4vw, 20px);
-    font-weight: bold;
-    color: #333;
+  width: clamp(120px, 25vw, 150px);
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: bold;
+  color: #333;
 }
 
 .counter {
-    font-size: clamp(36px, 8vw, 48px);
-    color: #1589FF;
-    margin-bottom: 10px;
+  font-size: clamp(36px, 8vw, 48px);
+  color: #1589FF;
+  margin-bottom: 10px;
 }
 
 /* Content Section */
 .content-section {
-    padding: clamp(20px, 5vw, 30px) clamp(20px, 5vw, 50px);
-    max-width: 1200px;
-    margin: auto;
-    line-height: 1.6;
+  padding: clamp(20px, 5vw, 30px) clamp(20px, 5vw, 50px);
+  max-width: 1200px;
+  margin: auto;
+  line-height: 1.6;
 }
 
 .content-section h1,
 .content-section h2,
 .content-section h3 {
-    text-align: center;
-    color: #82CAFF;
-    font-size: clamp(24px, 5vw, 32px);
+  text-align: center;
+  color: #82CAFF;
+  font-size: clamp(24px, 5vw, 32px);
 }
 
 .content-section p {
-    font-size: clamp(16px, 4vw, 18px);
-    text-align: center;
+  font-size: clamp(16px, 4vw, 18px);
+  text-align: center;
 }
 
 .section-divider {
-    margin: 20px auto;
-    width: 80%;
-    border: 1px solid #82CAFF;
+  margin: 20px auto;
+  width: 80%;
+  border: 1px solid #82CAFF;
 }
 
 /* Core Values Grid (Reverted to Original Grid Layout) */
 .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  justify-content: center;
 }
 
 .value-box {
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .value-box:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .value-box i {
-    font-size: 36px;
-    color: #1589FF;
-    margin-bottom: 15px;
+  font-size: 36px;
+  color: #1589FF;
+  margin-bottom: 15px;
 }
 
 .value-box h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #1589FF;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1589FF;
 }
 
 .value-box p {
-    font-size: 15px;
-    color: #555;
+  font-size: 15px;
+  color: #555;
 }
 
 /* Responsive Design for Values Grid */
 @media (max-width: 768px) {
-    .values-grid {
-        grid-template-columns: 1fr; /* Ensure vertical stacking on mobile */
-    }
+  .values-grid {
+    grid-template-columns: 1fr; /* Ensure vertical stacking on mobile */
+  }
 }
 /* Flip Cards */
 .flip-container {
-    perspective: 1000px;
-    display: inline-block;
-    margin: 15px;
+  perspective: 1000px;
+  display: inline-block;
+  margin: 15px;
 }
 
 .flip-card {
-    width: clamp(250px, 45vw, 300px);
-    height: 300px;
-    text-align: center;
-    position: relative;
+  width: clamp(250px, 45vw, 300px);
+  height: 300px;
+  text-align: center;
+  position: relative;
 }
 
 .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flip-card-front,
 .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-weight: bold;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-weight: bold;
 }
 
 .flip-card-front .overlay,
 .flip-card-back .overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .flip-card-back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /* Slideshow */
 .slideshow-wrapper {
-    width: 100vw;
-    overflow: hidden;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .slideshow-container {
-    width: 100vw;
-    max-width: 100%;
-    margin: 0;
-    position: relative;
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  position: relative;
 }
 
 .slideshow-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .text {
-    color: #f2f2f2;
-    font-size: clamp(12px, 3vw, 15px);
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
+  color: #f2f2f2;
+  font-size: clamp(12px, 3vw, 15px);
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 .numbertext {
-    color: #f2f2f2;
-    font-size: clamp(10px, 2.5vw, 12px);
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
+  color: #f2f2f2;
+  font-size: clamp(10px, 2.5vw, 12px);
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
 .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
 .active {
-    background-color: #717171;
+  background-color: #717171;
 }
 
 .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
+  from { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
 /* CBC Stages */
 .cbc-stage {
-    background-color: #f0f8ff;
-    border-left: 6px solid #1589FF;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 8px;
-    max-width: 800px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease forwards;
+  background-color: #f0f8ff;
+  border-left: 6px solid #1589FF;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  max-width: 800px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease forwards;
 }
 
 .cbc-stage h4 {
-    color: #1589FF;
-    margin-bottom: 10px;
-    font-size: clamp(18px, 4vw, 22px);
+  color: #1589FF;
+  margin-bottom: 10px;
+  font-size: clamp(18px, 4vw, 22px);
 }
 
 .highlight {
-    color: #1589FF;
-    font-weight: bold;
+  color: #1589FF;
+  font-weight: bold;
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* CTA Banner */
 .cta-banner {
-    background: #1589FF;
-    color: white;
-    text-align: center;
-    padding: clamp(30px, 6vw, 40px) 20px;
-    border-radius: 8px;
-    margin: 40px auto;
-    max-width: 800px;
+  background: #1589FF;
+  color: white;
+  text-align: center;
+  padding: clamp(30px, 6vw, 40px) 20px;
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 800px;
 }
 
 .cta-btn {
-    background: white;
-    color: #1589FF;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
-    transition: 0.3s;
+  background: white;
+  color: #1589FF;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: 0.3s;
 }
 
 .cta-btn:hover {
-    background: #0d6efd;
-    color: white;
+  background: #0d6efd;
+  color: white;
 }
 
 /* Testimonial Slider */
 .testimonial-slider {
-    position: relative;
-    height: 100px;
-    overflow: hidden;
-    max-width: 700px;
-    margin: 20px auto;
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 20px auto;
 }
 
 .testimonial-slide {
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    text-align: center;
-    font-size: clamp(16px, 4vw, 18px);
-    color: #333;
-    transition: opacity 1s ease-in-out;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  font-size: clamp(16px, 4vw, 18px);
+  color: #333;
+  transition: opacity 1s ease-in-out;
 }
 
 .testimonial-slide.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Devotional Box */
 .devotional-box {
-    background: #e6f2ff;
-    border-left: 5px solid #1589FF;
-    padding: 15px 20px;
-    margin: 30px auto;
-    max-width: 600px;
-    font-style: italic;
-    font-size: 18px;
-    color: #333;
+  background: #e6f2ff;
+  border-left: 5px solid #1589FF;
+  padding: 15px 20px;
+  margin: 30px auto;
+  max-width: 600px;
+  font-style: italic;
+  font-size: 18px;
+  color: #333;
 }
 
 /* Floating Mascot */
 .floating-mascot {
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
-    width: 100px;
-    z-index: 1000;
-    animation: floatBounce 4s ease-in-out infinite;
-    text-align: center;
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  width: 100px;
+  z-index: 1000;
+  animation: floatBounce 4s ease-in-out infinite;
+  text-align: center;
 }
 
 .floating-mascot img {
-    width: 60px;
-    height: auto;
+  width: 60px;
+  height: auto;
 }
 
 .quote-bubble {
-    background: #82CAFF;
-    color: white;
-    font-size: clamp(12px, 3vw, 14px);
-    padding: 10px;
-    border-radius: 12px;
-    margin-top: 8px;
-    animation: fadeInOutQuote 10s infinite;
+  background: #82CAFF;
+  color: white;
+  font-size: clamp(12px, 3vw, 14px);
+  padding: 10px;
+  border-radius: 12px;
+  margin-top: 8px;
+  animation: fadeInOutQuote 10s infinite;
 }
 
 @keyframes floatBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes fadeInOutQuote {
-    0%, 100% { opacity: 0; }
-    10%, 90% { opacity: 1; }
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
 }
 
 /* Video Section */
 .video-section {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .video-overlay-content {
-    position: relative;
-    z-index: 1;
-    padding: clamp(40px, 8vw, 60px) 20px;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
+  position: relative;
+  z-index: 1;
+  padding: clamp(40px, 8vw, 60px) 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
 }
 
 .video-overlay-content h1,
 .video-overlay-content p {
-    color: white;
-    font-size: clamp(16px, 4vw, 22px);
+  color: white;
+  font-size: clamp(16px, 4vw, 22px);
 }
 
 /* Parallax Section */
 .parallax-section {
-    background-image: url('pic13.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: clamp(60px, 10vw, 100px) 20px;
-    text-align: center;
-    position: relative;
+  background-image: url('pic13.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: clamp(60px, 10vw, 100px) 20px;
+  text-align: center;
+  position: relative;
 }
 
 .parallax-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 700px;
-    margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: auto;
 }
 
 /* Chatbot */
 .chatbot-toggle {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    background: #1589FF;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 50px;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    font-weight: bold;
-    font-size: clamp(14px, 3vw, 16px);
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background: #1589FF;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-size: clamp(14px, 3vw, 16px);
 }
 
 .chatbot-box {
-    display: none;
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    width: clamp(250px, 80vw, 300px);
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    z-index: 1000;
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: clamp(250px, 80vw, 300px);
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
 }
 
 .chat-header {
-    background: #1589FF;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    text-align: center;
-    font-size: clamp(16px, 4vw, 18px);
+  background: #1589FF;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: clamp(16px, 4vw, 18px);
 }
 
 .chat-content {
-    height: 200px;
-    padding: 10px;
-    overflow-y: auto;
-    font-size: clamp(12px, 3vw, 14px);
+  height: 200px;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: clamp(12px, 3vw, 14px);
 }
 
 .chat-content p {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 #chatInput {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-top: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: clamp(12px, 3vw, 14px);
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: clamp(12px, 3vw, 14px);
 }
 
 /* Footer */
 .footer {
-    background: #333;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .footer section {
-    flex: 1 1 250px;
-    margin: 10px;
+  flex: 1 1 250px;
+  margin: 10px;
 }
 
 .footer-logo-box {
-    text-align: center;
-    margin: 30px auto;
+  text-align: center;
+  margin: 30px auto;
 }
 
 .footer-logo {
-    width: clamp(120px, 30vw, 160px);
-    border-radius: 8px;
-    animation: glowPulse 4s ease-in-out infinite, floatBounce 6s ease-in-out infinite;
+  width: clamp(120px, 30vw, 160px);
+  border-radius: 8px;
+  animation: glowPulse 4s ease-in-out infinite, floatBounce 6s ease-in-out infinite;
 }
 
 .footer-logo.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer-tagline {
-    font-size: clamp(16px, 4vw, 18px);
-    font-weight: bold;
-    color: #1589FF;
-    margin-top: 10px;
-    animation: fadeInTagline 2s ease 0.5s forwards;
+  font-size: clamp(16px, 4vw, 18px);
+  font-weight: bold;
+  color: #1589FF;
+  margin-top: 10px;
+  animation: fadeInTagline 2s ease 0.5s forwards;
 }
 
 @keyframes glowPulse {
-    0% { box-shadow: 0 0 5px #1589FF; }
-    50% { box-shadow: 0 0 20px #1589FF; }
-    100% { box-shadow: 0 0 5px #1589FF; }
+  0% { box-shadow: 0 0 5px #1589FF; }
+  50% { box-shadow: 0 0 20px #1589FF; }
+  100% { box-shadow: 0 0 5px #1589FF; }
 }
 
 @keyframes fadeInTagline {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Scroll-to-Top Button */
 #scrollToTopBtn {
-    position: fixed;
-    bottom: 40px;
-    right: 30px;
-    z-index: 99;
-    background-color: #0d6efd;
-    color: white;
-    border: none;
-    outline: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 99;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
 }
 
 #scrollToTopBtn:hover {
-    background-color: #0b5ed7;
+  background-color: #0b5ed7;
 }
 
 /* Features Section */
 .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .features img {
-    width: 100%;
-    max-width: clamp(200px, 40vw, 300px);
-    height: auto;
-    border-radius: 8px;
+  width: 100%;
+  max-width: clamp(200px, 40vw, 300px);
+  height: auto;
+  border-radius: 8px;
 }
 
 /* Iframe */
 iframe {
-    width: 100%;
-    height: clamp(250px, 50vw, 450px);
-    border: 0;
-    margin: 20px auto;
-    display: block;
+  width: 100%;
+  height: clamp(250px, 50vw, 450px);
+  border: 0;
+  margin: 20px auto;
+  display: block;
 }
 
 /* Animations */
 .floating-text {
-    animation: floatBounce 2s ease-in-out infinite;
-    font-size: clamp(16px, 4vw, 20px);
-    font-weight: bold;
-    color: black;
-    text-align: center;
-    margin: 40px 0;
+  animation: floatBounce 2s ease-in-out infinite;
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin: 40px 0;
 }
 
 .fade-in-out-text {
-    animation: fadeInOut 4s ease-in-out infinite;
-    font-size: clamp(16px, 4vw, 20px);
-    color: #000;
-    text-align: center;
-    margin: 40px auto;
-    max-width: 700px;
+  animation: fadeInOut 4s ease-in-out infinite;
+  font-size: clamp(16px, 4vw, 20px);
+  color: #000;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 700px;
 }
 
 @keyframes fadeInOut {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header {
-        padding: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .header {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .header img {
-        width: 80px;
-    }
+  .header img {
+    width: 80px;
+  }
 
-    .header-text {
-        margin-left: 0;
-        margin-top: 10px;
-    }
+  .header-text {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 
-    .menu-toggle {
-        display: flex;
-        margin-left: auto;
-    }
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
 
-    .navbar-regular {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
+  .navbar-regular {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .navbar-regular.active {
-        display: flex;
-    }
+  .navbar-regular.active {
+    display: flex;
+  }
 
-    .navbar-regular li {
-        width: 100%;
-    }
+  .navbar-regular li {
+    width: 100%;
+  }
 
-    .dropdown-content {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-    }
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
 
-    .welcome-section {
-        padding: 30px 15px;
-    }
+  .welcome-section {
+    padding: 30px 15px;
+  }
 
-    .flip-card {
-        width: 100%;
-        max-width: 300px;
-        height: 250px;
-    }
+  .flip-card {
+    width: 100%;
+    max-width: 300px;
+    height: 250px;
+  }
 
-    .features img {
-        max-width: 200px;
-    }
+  .features img {
+    max-width: 200px;
+  }
 
-    .parallax-section {
-        background-attachment: scroll; /* Parallax effect disabled on mobile */
-        padding: 60px 15px;
-    }
+  .parallax-section {
+    background-attachment: scroll; /* Parallax effect disabled on mobile */
+    padding: 60px 15px;
+  }
 
-    .chatbot-box {
-        width: 90vw;
-        right: 15px;
-    }
+  .chatbot-box {
+    width: 90vw;
+    right: 15px;
+  }
 
-    .footer section {
-        flex: 1 1 100%;
-        text-align: center;
-    }
+  .footer section {
+    flex: 1 1 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
-    .header-text h1 {
-        font-size: 20px;
-    }
+  .header-text h1 {
+    font-size: 20px;
+  }
 
-    .typewriter {
-        font-size: 14px;
-    }
+  .typewriter {
+    font-size: 14px;
+  }
 
-    .counter-box {
-        width: 100px;
-    }
+  .counter-box {
+    width: 100px;
+  }
 
-    .counter {
-        font-size: 32px;
-    }
+  .counter {
+    font-size: 32px;
+  }
 
-    .value-box {
-        flex: 1 1 100%;
-    }
+  .value-box {
+    flex: 1 1 100%;
+  }
 
-    .flip-container {
-        margin: 10px 0;
-    }
+  .flip-container {
+    margin: 10px 0;
+  }
 
-    .slideshow-container img {
-        height: 200px;
-    }
+  .slideshow-container img {
+    height: 200px;
+  }
 
-    .cta-banner {
-        padding: 20px 15px;
-    }
+  .cta-banner {
+    padding: 20px 15px;
+  }
 }
 
 @media (min-width: 769px) {
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-    .navbar-regular {
-        display: flex;
-    }
+  .navbar-regular {
+    display: flex;
+  }
 
-    .welcome-section {
-        padding: 60px 30px;
-    }
+  .welcome-section {
+    padding: 60px 30px;
+  }
 
-    .flip-card {
-        width: 300px;
-    }
+  .flip-card {
+    width: 300px;
+  }
 }
-</style>
-<!-- AOS Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </style>
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
+  <section class="header">
+    <a href="index.html">
+      <img src="kaslogo.jpg" alt="School Logo">
+    </a>	 
+    <div class="header-text">
+      <div class="typewriter" id="typewriter"></div>
+      <div class="typewriter-container">
+        <script>
+          const phrases = [
+            "Welcome to Kitengela Adventist School.",
+            "With God We Excel.",
+            "Explore. Learn. Grow.",
+            "Admissions Open Now!"
+          ];
 
-<section class="header">
-<a href="index.html">
-<img src="kaslogo.jpg" alt="School Logo">
-</a>	 
-<div class="header-text">
+          let currentPhrase = 0;
+          let currentChar = 0;
+          let isDeleting = false;
+          const typeSpeed = 100;
+          const eraseSpeed = 50;
+          const delayBetween = 1500; // Delay between full phrase
 
-<div class="typewriter" id="typewriter"></div>
-<div class="typewriter-container">
-<script>
-    const phrases = [
-        "Welcome to Kitengela Adventist School.",
-        "With God We Excel.",
-        "Explore. Learn. Grow.",
-        "Admissions Open Now!"
-    ];
+          const el = document.getElementById("typewriter");
 
-    let currentPhrase = 0;
-    let currentChar = 0;
-    let isDeleting = false;
-    const typeSpeed = 100;
-    const eraseSpeed = 50;
-    const delayBetween = 1500; // Delay between full phrase
+          function type() {
+            const text = phrases[currentPhrase];
+            if (isDeleting) {
+              el.textContent = text.substring(0, currentChar--);
+            } else {
+              el.textContent = text.substring(0, currentChar++);
+            }
 
-    const el = document.getElementById("typewriter");
+            if (!isDeleting && currentChar === text.length) {
+              isDeleting = true;
+              setTimeout(type, delayBetween);
+            } else if (isDeleting && currentChar === 0) {
+              isDeleting = false;
+              currentPhrase = (currentPhrase + 1) % phrases.length;
+              setTimeout(type, 500);
+            } else {
+              setTimeout(type, isDeleting ? eraseSpeed : typeSpeed);
+            }
+          }
 
-    function type() {
-        const text = phrases[currentPhrase];
-        if (isDeleting) {
-            el.textContent = text.substring(0, currentChar--);
-        } else {
-            el.textContent = text.substring(0, currentChar++);
-        }
-
-        if (!isDeleting && currentChar === text.length) {
-            isDeleting = true;
-            setTimeout(type, delayBetween);
-        } else if (isDeleting && currentChar === 0) {
-            isDeleting = false;
-            currentPhrase = (currentPhrase + 1) % phrases.length;
+          document.addEventListener("DOMContentLoaded", () => {
             setTimeout(type, 500);
-        } else {
-            setTimeout(type, isDeleting ? eraseSpeed : typeSpeed);
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(type, 500);
-    });
-</script>
-</div>
-</div>
-	
-<div class="menu-toggle" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-</section>
-
-<ul class="navbar-regular" id="navbar">
-<li class="dropdown">
-<a href="index.html">Our School</a>
-<ul class="dropdown-content">
-<li><a href="aboutus.html">About Us</a></li>
-<li><a href="results.html">Academics</a></li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="education.html">Education</a>
-<ul class="dropdown-content">
-<li><a href="jss.html">Junior Secondary School</a></li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="admission.html">Admission</a>
-<ul class="dropdown-content">
-<li><a href="process.html">Process</a></li>
-<li><a href="fees.html">School Fees</a></li>
-</ul>
-</li>
-<li class="dropdown">
-<a href="school-life.html">School Life</a>
-<ul class="dropdown-content">
-<li><a href="uniform.html">School Uniform</a></li>
-<li><a href="bus.html">Bus Routes</a></li>
-<li><a href="news.html">News & Events</a></li>
-</ul>
-</li>
-<li><a href="gallery.html">Gallery</a></li>
-</ul>
-</br>
-<script>
-    for (let i = 0; i < 100; i++) {
-        let star = document.createElement("div");
-        star.className = "star";
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.top = Math.random() * -100 + "vh";
-        star.style.animationDuration = (Math.random() * 5 + 5) + "s";
-        document.body.appendChild(star);
-    }
-</script>
-
-<section class="welc">
-<div class="content-section welcome-section fade-in-section">
-
-<h1>Welcome To Kitengela Adventist </h1>
-<hr class="section-divider">
-<p style="font-size:17px;">Welcome to Kitengela Adventist School, a place where young minds are nurtured, 
-values are instilled, and futures are shaped with purpose. We are a Christian-based 
-institution committed to providing a high-quality, holistic education that empowers 
-our learners academically, spiritually, socially, and physically.our school offers
-a nurturing environment whereeach child is encouraged to grow in character, faith,
-and knowledge.</p>
-<p style="font-size:17px;">At Kitengela Adventist School, we believe that every child is unique and full of 
-potential. Our dedicated team of qualified and caring teachers work closely with
-learners to ensure that they receive individual attention, guidance, and support 
-throughout their academic journey. We blend a strong curriculum with co-curricular
-activities, life skills training, and spiritual guidance to prepare students not
-only for exams but also for life beyond the classroom.</p>
-<p style="font-size:17px;">We are more than just a school—we are a family that values respect, integrity, 
-responsibility, and excellence. Whether you're a parent seeking the best start for
-your child or a visitor looking to learn more about us, we warmly invite you to explore
-what makes Kitengela Adventist School a special place to learn, grow, and thrive.</p>
-
-</section>
-</div>
- 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        padding: 50px;
-    }
-
-    .title-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .line, .title {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    .line {
-        flex: 1;
-        height: 3px;
-        background: #87ceeb;
-        margin: 0 15px;
-        animation: fadeInRight 1s ease forwards;
-    }
-
-    .title {
-        font-size: 24px;
-        font-weight: bold;
-        white-space: nowrap;
-        animation: fadeInRight 1s ease forwards;
-        animation-delay: 1s;
-    }
-
-    .line.right {
-        animation-delay: 2s;
-    }
-
-    @keyframes fadeInRight {
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    }
-</style>
-
-<section class="counter-section" style="background: #f0f8ff; padding: 60px 20px; text-align: center;">
-<h2 style="color: #1589FF; margin-bottom: 40px;">Our Impact in Numbers</h2>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
-<div class="counter-box">
-<div class="counter" data-target="500">0</div>
-<p>Happy Students</p>
-</div>
-<div class="counter-box">
-<div class="counter" data-target="30">0</div>
-<p>Qualified Staff</p>
-</div>
-<div class="counter-box">
-<div class="counter" data-target="100">0</div>
-<p>Christian Values</p>
-</div>
-<div class="counter-box">
-<div class="counter" data-target="10">0</div>
-<p>Years of Excellence</p>
-</div>
-</div>
-</section>
-<hr class="section-divider">
-<div class="title-container">
-<div class="line left"></div>
-<h3 style="color:#87ceeb; ">Why Choose Kitengela <br> Adventist School</h3>
-<div class="line right"></div>
-</div>
-<div class="content-section">
-<p style="font-size:22px;">At Kitengela Adventist School, we go beyond academics to offer a well-rounded education that shapes the heart, mind,
-and character of every learner. Our Christ-centered approach ensures that students not only excel in their studies but
-also grow in faith, discipline, and integrity. We pride ourselves on a warm, family-like environment where every child
-is known, valued, and supported. With a team of qualified, passionate educators, modern learning facilities, and a
-balanced curriculum that integrates academics, spiritual growth, sports, and creative arts, we equip learners with the
-skills and values they need to succeed in life. Our commitment to excellence, small class sizes, and individual attention
-make Kitengela Adventist School a trusted choice for parents who want the very best for their children</p>
-</div>
-<section class="content-section" data-aos="fade-up">
-
-<h2 style="text-align:center; color:#1589FF;">Our Core Values</h2>
-<div class="values-grid">
-<div class="value-box">
-<i class="fas fa-praying-hands"></i>
-<h4>Faith</h4>
-</div>
-<div class="value-box">
-<i class="fas fa-users"></i>
-<h4>Respect</h4>
-</div>
-<div class="value-box">
-<i class="fas fa-star"></i>
-<h4>Excellence</h4>
-</div>
-<div class="value-box">
-<i class="fas fa-heart"></i>
-<h4>Love</h4>
-</div>
-</div>
-</section>
-
-<!-- Devotional Box with Original JavaScript -->
-<div id="daily-verse" class="devotional-box"></div>
-<script>
-    const verses = [
-        `"Train up a child in the way he should go." – Proverbs 22:6`,
-        `"I can do all things through Christ who strengthens me." – Philippians 4:13`,
-        `"The fear of the Lord is the beginning of wisdom." – Proverbs 9:10`,
-        `"Let the little children come to me..." – Matthew 19:14`
-    ];
-    const verseEl = document.getElementById("daily-verse");
-    const random = Math.floor(Math.random() * verses.length);
-    verseEl.textContent = verses[random];
-</script>
-
-<!-- Flip Card Styles -->
-<style>
-    .flip-container {
-        perspective: 1000px;
-        display: inline-block;
-        margin: 20px;
-    }
-
-    .flip-card {
-        width: 300px;
-        height: 300px;
-        text-align: center;
-        position: relative;
-    }
-
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-    }
-
-    .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-
-    .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-        background-size: cover;
-        background-position: center;
-        color: white;
-        font-weight: bold;
-    }
-
-    .flip-card-front .overlay, .flip-card-back .overlay {
-        background-color: rgba(0, 0, 0, 0.4); /* semi-transparent */
-        padding: 20px;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .flip-card-back {
-        transform: rotateY(180deg);
-    }
-
-    .submenu {
-        display: none;
-        list-style: none;
-        padding: 0;
-    }
-    .dropdown.active .submenu {
-        display: block;
-    }
-</style>
-
-<!-- Flip Card 1 -->
-<div class="flip-container">
-<div class="flip-card">
-<div class="flip-card-inner">
-<div class="flip-card-front" style="background-image: url('pic81.jpg');">
-<div class="overlay">
-<p>🎓 Academic Programs<br>Explore our curriculum</p>
-</div>
-</div>
-<div class="flip-card-back" style="background-image: url('pic71.jpg');">
-<div class="overlay">
-<p>From STEM to the arts—your child thrives here!</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Flip Card 2 -->
-<div class="flip-container">
-<div class="flip-card">
-<div class="flip-card-inner">
-<div class="flip-card-front" style="background-image: url('pic70.jpg');">
-<div class="overlay">
-<p>🛡 Life at School<br>Beyond the classroom</p>
-</div>
-</div>
-<div class="flip-card-back" style="background-image: url('pic4.png');">
-<div class="overlay">
-<p>Where students explore, lead, and connect!</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Flip Card 3 -->
-<div class="flip-container">
-<div class="flip-card">
-<div class="flip-card-inner">
-<div class="flip-card-front" style="background-image: url('bgr.jpg');">
-<div class="overlay">
-<p>📝 Enroll Today<br>Now accepting applications!</p>
-</div>
-</div>
-<div class="flip-card-back" style="background-image: url('pic33.jpg');">
-<div class="overlay">
-<p>Discover your place in our community!</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<section class="parallax-section">
-<div class="parallax-content">
-<div data-aos="fade-up">
-<h2>Our Mission </h2>
-<p>To provide holistic Christian education that nurtures every child in Christ-like values and academic excellence.</p>
-</div>
-
-<div class="features">
-<img src="book.png" alt="Book Icon">
-<img src="class.jpg" alt="Classroom">
-<div data-aos="fade-up">
-<h3>Empowering Minds, Nurturing Faith</h3>
-<p>At Kitengela Adventist School, we offer quality
-Christian education that shapes character,
-inspires excellence,and prepares students
-for a purposeful future.</p>
-</div>
-
-<div class="features">
-<img src="top.png" alt="Top Icon">
-<img src="grad.jpg" alt="Graduation">
-<div data-aos="fade-up" >
-<h3>Stepping into a Bright Future</h3>
-<p>Our kindergarten graduates are confident,
-curious, and ready for the next exciting
-chapter in upper primary—growing in wisdom,
-joy, and faith every step of the way.</p>
-</div>
- 
-<div class="features">
-<img src="clt.png" alt="Culture Icon">
-<img src="unity.jpg" alt="Unity">
-<div data-aos="fade-up">
-<h3>Celebrating Our Roots</h3>
-<p>At Kitengela Adventist School, we value and celebrate cultural
-diversity as a vital part of learning. Through music, language, dress,
-and traditions, our learners gain a deeper appreciation of their heritage
-while respecting others—building unity, identity, and pride in who they are.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
- 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
-<section class="video-section" data-aos="fade-up">
-<video autoplay muted loop playsinline class="background-video">
-<source src="flaggg.mp4" type="video/mp4" />
-Your browser does not support the video tag.
-</video>
-
-<div class="video-overlay-content">
-  <div class="title-container">
-    <div class="line left"></div>
-    <h1><b></b>Growing Beyond The Classroom</b></h1>
-    <div class="line right"></div>
-  </div>
-    
-   
-    
-     <p style="font-size:22px;"  class="floating-text">At Kitengela Adventist School, we are committed to nurturing learners not only academically but also socially,
- physically, and spiritually through a vibrant and well-structured co-curricular program. We recognize that every 
- child is gifted uniquely, and we provide a platform where talents are discovered, nurtured, and celebrated. Our
- Pathfinder Club instills discipline, leadership, and a deep sense of service among our learners, while our active
- Scouts movement fosters teamwork, resilience, and a love for the outdoors.
-</p>
-<p style="font-size:22px;"  class="floating-text">Our school choir continues to set high standards through its inspiring performances, both in school and during 
-external events. We are especially proud of our enthusiastic participation in national and regional music festivals,
- where our learners showcase their vocal, instrumental, and cultural talents while gaining confidence and stage
- experience. These festivals not only promote artistic expression but also help students appreciate Kenya’s rich
- cultural diversity.</p>
-
-<p style="font-size:22px;"  class="floating-text">In the field of sports, our pupils excel in football, athletics, and other games that promote physical fitness, 
-discipline, and teamwork. Academic clubs such as debate and public speaking sharpen their communication and critical
- thinking skills, while drama and creative arts provide outlets for expression and imagination.
-</p>
-<p style="font-size:22px;"  class="floating-text">Through all these activities, we aim to develop well-rounded individuals who are confident, respectful, and ready to
- contribute positively to society. At Kitengela Adventist School, every co-curricular activity is an opportunity to grow,
- lead, and shine.</p>
- 
-   <p style="font-size:22px;"  class="floating-text">At Kitengela Adventist School, we are committed to nurturing learners not only academically but also socially,
- physically, and spiritually through a vibrant and well-structured co-curricular program. We recognize that every 
- child is gifted uniquely, and we provide a platform where talents are discovered, nurtured, and celebrated. Our
- Pathfinder Club instills discipline, leadership, and a deep sense of service among our learners, while our active
- Scouts movement fosters teamwork, resilience, and a love for the outdoors.
-</p>
-<p style="font-size:22px;"  class="floating-text">Our school choir continues to set high standards through its inspiring performances, both in school and during 
-external events. We are especially proud of our enthusiastic participation in national and regional music festivals,
- where our learners showcase their vocal, instrumental, and cultural talents while gaining confidence and stage
- experience. These festivals not only promote artistic expression but also help students appreciate Kenya’s rich
- cultural diversity.</p>
-
-<p style="font-size:22px;"  class="floating-text">In the field of sports, our pupils excel in football, athletics, and other games that promote physical fitness, 
-discipline, and teamwork. Academic clubs such as debate and public speaking sharpen their communication and critical
- thinking skills, while drama and creative arts provide outlets for expression and imagination.
-</p>
-<p style="font-size:22px;"  class="floating-text">Through all these activities, we aim to develop well-rounded individuals who are confident, respectful, and ready to
- contribute positively to society. At Kitengela Adventist School, every co-curricular activity is an opportunity to grow,
- lead, and shine.</p>
-  </div>
-  </div>
+          });
+        </script>
+      </div>
     </div>
-</section>
-
-<!-- Additional sections below -->
-<hr class="section-divider">
-<div class="title-container">
-    <div class="line left"></div>
-     <h3 style="color:#87ceeb; ">What Makes kitengela Adventist School<br> Worth Every Shilling</h3>
-    <div class="line right"></div>
-  </div>
-   <div class="value-grid">
-  <div class="value-box" data-aos="zoom-in">
-    <i class="fas fa-cross"></i>
-    <h4>Faith-Based Excellence</h4>
-    <p>We raise achievers grounded in God’s Word.</p>
-  </div>
-  <div class="value-box" data-aos="zoom-in" data-aos-delay="100">
-    <i class="fas fa-chalkboard-teacher"></i>
-    <h4>Certified & Caring Staff</h4>
-    <p>Our team combines training with compassion.</p>
-  </div>
-  <div class="value-box" data-aos="zoom-in" data-aos-delay="200">
-    <i class="fas fa-music"></i>
-    <h4>Music & Talent Empowerment</h4>
-    <p>National music festival finalists — three years running.</p>
-  </div>
-  <div class="value-box" data-aos="zoom-in" data-aos-delay="300">
-    <i class="fas fa-bible"></i>
-    <h4>Daily Devotions</h4>
-    <p>Students begin each day with God’s Word.</p>
-  </div>
-  <div class="value-box" data-aos="zoom-in" data-aos-delay="400">
-    <i class="fas fa-school"></i>
-    <h4>Modern Facilities</h4>
-    <p>Clean classrooms, digital labs, and secure spaces.</p>
-  </div>
-  <div class="value-box" data-aos="zoom-in" data-aos-delay="500">
-    <i class="fas fa-star"></i>
-    <h4>100% Parent Trust Rate</h4>
-    <p>Our learners stay — and thrive — for a reason.</p>
-  </div>
-</div>
-</br>
-</br>
-<div class="chatbot-toggle" onclick="toggleChatbot()">Need Help?</div>
-<div class="chatbot-box" id="chatbotBox">
-  <div class="chat-header">Admissions Assistant</div>
-  <div class="chat-content" id="chatContent">
-    <p><strong>KAS:</strong> Hi! I can help with admissions. Ask a question below!</p>
-  </div>
-  <input type="text" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter') handleChat()" />
-</div>
-  
-  <div class="floating-mascot">
-  
-  <div class="quote-bubble" id="quote-text">Every child is a star.</div>
-</div>
- <div class="slideshow-wrapper" style="width: 100vw; overflow: hidden;">
-<div class="slideshow-container" style="width: 100%; max-width: none;">
-<div class="mySlides fade">
-
-<img src="bgr.jpg" style="width:100%"/>
-  &lt;
-</div>
-<div class="mySlides fade">
-
-<img src="pic10.jpg" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="pic9.png" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="pic2.png" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="bgr.jpg" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="homeback.jpeg" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="pic9.png" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="pic4.png" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="homeback.jpeg" style="width:100%"/>
-</div>
-<div class="mySlides fade">
-
-<img src="pic4.png" style="width:100%"/>
-</div>
-</div>
-</div>
-<br/>
-<div style="text-align:center">
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-</div>
-
-<script>
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-</script>
- <br/>
- <br/>
- <br/>
- <div class="content-section" data-aos="fade-up">
-    <h3>Academic Stages – CBC Curriculum</h3>
-   <div class="cbc-stage">
-<h4><i class="fas fa-child"></i> Early Years Education (Pre-Primary 1 &amp; 2)</h4>
-<p><em>Ages: 4–5 years</em></p>
-<p>Focus on <span class="highlight">foundational skills</span> in literacy, numeracy, spiritual growth, social skills, and physical development through play-based learning.</p>
-</div>
-<div class="cbc-stage">
-<h4><i class="fas fa-pencil-alt"></i> Lower Primary (Grades 1–3)</h4>
-<p><em>Ages: 6–8 years</em></p>
-<p>Core learning in literacy, Kiswahili, mathematics, religious education, environmental activities, and life skills. Emphasis on nurturing <span class="highlight">curiosity</span> and <span class="highlight">moral responsibility</span>.</p>
-</div>
-<div class="cbc-stage">
-<h4><i class="fas fa-leaf"></i> Middle Primary (Grades 4–6)</h4>
-<p><em>Ages: 9–11 years</em></p>
-<p>Learners explore a broader curriculum including science, home science, agriculture, creative arts, and technology. Evaluation includes classroom-based assessments and practical activities.</p>
-</div>
-<div class="cbc-stage">
-<h4><i class="fas fa-graduation-cap"></i> Junior Secondary School (Grades 7–9)</h4>
-<p><em>Ages: 12–14 years</em></p>
-<p>A critical stage that prepares learners for senior school and future careers. Subjects offered include:</p>
-<ul>
-<li>Integrated Science</li>
-<li>Mathematics</li>
-<li>Christian Religious Education</li>
-<li>Business Studies</li>
-<li>Pre-Technical Studies</li>
-<li>Health Education</li>
-<li>ICT, Sports, and Life Skills</li>
-</ul>
-</div>
-</p>
-<p class="fade-in-out-text">We guide learners through career pathways and talent development while upholding Adventist principles and
- academic excellence.
-  </div>
-
-
-<div class="content-section" data-aos="fade-in">
-
- <h1> Quick facts</h1>
- <ul class="floating-text">
- <li>🔹 500+ students</li>
- <li>🔹 10+ Years of service</li>
- <li>🔹 100% Christian Curriculum</li>
- </ul>
- </div>
- <section class="cta-banner" data-aos="fade-up">
-  <h2>Be Part of the Story — Join Kitengela Adventist School Today</h2>
- <a href="https://wa.me/254722561460?text=Hello%20Kitengela%20Adventist%20School%2C%20I%27m%20interested%20in%20applying%20for%20admission" 
-   class="cta-btn" target="_blank">
-   <i class="fab fa-whatsapp" style="margin-right:8px;"></i> Apply Now
-</a>
-</section>
- <section class="testimonial-slider-section" data-aos="fade-up">
-  <h2 style="text-align:center; color:#1589FF;">What Parents & Students Say</h2>
-  <div class="testimonial-slider">
-    <div class="testimonial-slide">“KAS helped my son grow spiritually and academically.” – Parent</div>
-    <div class="testimonial-slide">“I love my teachers and Bible lessons.” – Grade 4 Learner</div>
-    <div class="testimonial-slide">“I feel ready for high school because of KAS.” – JSS Student</div>
-  </div>
-</section>
-<div class="floating-mascot">
-<img src="mascot.png" alt="Mascot">
-<div class="quote-bubble" id="mascot-quote"></div>
-</div>
-<div class="chatbot-toggle" onclick="toggleChatbot()">
-Chat with Us
-</div>
-<div class="chatbot-box" id="chatbot-box">
-<div class="chat-header">Chatbot</div>
-<div class="chat-content" id="chat-content">
-<p>Hello! How can I help you today?</p>
-</div>
-<input type="text" id="chatInput" placeholder="Type your message...">
-</div>
-<hr class="section-divider">
-<section class="foot">
-  <section class="footer">
-    <section>
-      <h3>Kitengela Adventist School</h3>
-      <p>Kenya-Nairobi, Kajiado County</p>
-      <p>Kitengela township, Prison Rd, P.O.Box: 306-00242</p>
-    </section>
-    <section>
-      <h3>Management Office</h3>
-      <p>Chairman: +254 26487953</p>
-      <p>Head Teacher: +254 722 561 460</p>
-    </section>
-    <section>
-      <h3>Secretary</h3>
-      <p>Secretary: +254 717886880</p>
-      <p>Email: kitengelaadventistacademy@gmail.com</p>
-    </section>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </section>
-   <div class="footer-logo-box">
-  <img src="kaslogo.jpg" alt="KAS Logo" class="footer-logo" />
-  <p class="footer-tagline">With God We Excel</p>
-</div>
-  <div class="navbar-regular">
-<section  class="navbar1">
- <ul class="navbar-regular" id="navbar">
+
+  <ul class="navbar-regular" id="navbar">
     <li class="dropdown">
       <a href="index.html">Our School</a>
       <ul class="dropdown-content">
         <li><a href="aboutus.html">About Us</a></li>
-        
-        <li><a href="results.html">Academic Results</a></li>
+        <li><a href="results.html">Academics</a></li>
       </ul>
     </li>
     <li class="dropdown">
@@ -1691,8 +1033,6 @@ Chat with Us
       <ul class="dropdown-content">
         <li><a href="process.html">Process</a></li>
         <li><a href="fees.html">School Fees</a></li>
-        <li><a href="faqs.html">FAQs</a></li>
-        
       </ul>
     </li>
     <li class="dropdown">
@@ -1705,167 +1045,978 @@ Chat with Us
     </li>
     <li><a href="gallery.html">Gallery</a></li>
   </ul>
-</section>
-</div>
-<!-- Font Awesome CDN for social icons -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+  </br>
+  <script>
+    for (let i = 0; i < 100; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.top = Math.random() * -100 + "vh";
+      star.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      document.body.appendChild(star);
+    }
+  </script>
 
-<footer style="background-color: white; color: black; padding: 50px 0;">
-  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 80px; padding: 0 20px;">
-    <!-- School Info -->
-    <div style="flex: 1 1 250px;">
-      <div style="flex: 1 1 250px;">
-     
-    <!-- Social Media -->
-    <div style="flex: 1 1 200px;">
-      <h4 style="margin-bottom: 15px;">Follow Us</h4>
-      <div style="display: flex; gap: 15px;">
-       <a href="#" style="color: lightblue; font-size: 40px;"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" style="color: blue; font-size: 40px;"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" style="color: black; font-size: 40px;"><i class="fab fa-instagram"></i></a>
-        <a href="#" style="color: red; font-size: 40px;"><i class="fab fa-youtube"></i></a>
+  <section class="welc">
+    <div class="content-section welcome-section fade-in-section">
+      <h1>Welcome To Kitengela Adventist school</h1>
+      <hr class="section-divider">
+      <p style="font-size:17px;">Welcome to Kitengela Adventist School, a place where young minds are nurtured, 
+      values are instilled, and futures are shaped with purpose. We are a Christian-based 
+      institution committed to providing a high-quality, holistic education that empowers 
+      our learners academically, spiritually, socially, and physically.our school offers
+      a nurturing environment whereeach child is encouraged to grow in character, faith,
+      and knowledge.</p>
+      <p style="font-size:17px;">At Kitengela Adventist School, we believe that every child is unique and full of 
+      potential. Our dedicated team of qualified and caring teachers work closely with
+      learners to ensure that they receive individual attention, guidance, and support 
+      throughout their academic journey. We blend a strong curriculum with co-curricular
+      activities, life skills training, and spiritual guidance to prepare students not
+      only for exams but also for life beyond the classroom.</p>
+      <p style="font-size:17px;">We are more than just a school—we are a family that values respect, integrity, 
+      responsibility, and excellence. Whether you're a parent seeking the best start for
+      your child or a visitor looking to learn more about us, we warmly invite you to explore
+      what makes Kitengela Adventist School a special place to learn, grow, and thrive.</p>
+    </div>
+  </section>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 50px;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .line, .title {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    .line {
+      flex: 1;
+      height: 3px;
+      background: #87ceeb;
+      margin: 0 15px;
+      animation: fadeInRight 1s ease forwards;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      animation: fadeInRight 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .line.right {
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+
+  <section class="counter-section" style="background: #f0f8ff; padding: 60px 20px; text-align: center;">
+    <h2 style="color: #1589FF; margin-bottom: 40px;">Our Impact in Numbers</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+      <div class="counter-box">
+        <div class="counter" data-target="500">0</div>
+        <p>Happy Students</p>
+      </div>
+      <div class="counter-box">
+        <div class="counter" data-target="30">0</div>
+        <p>Qualified Staff</p>
+      </div>
+      <div class="counter-box">
+        <div class="counter" data-target="100">0</div>
+        <p>Christian Values</p>
+      </div>
+      <div class="counter-box">
+        <div class="counter" data-target="10">0</div>
+        <p>Years of Excellence</p>
+      </div>
+    </div>
+  </section>
+  <hr class="section-divider">
+  <div class="title-container">
+    <div class="line left"></div>
+    <h3 style="color:#87ceeb; ">Why Choose Kitengela <br> Adventist School</h3>
+    <div class="line right"></div>
+  </div>
+  <div class="content-section">
+    <p style="font-size:22px;">At Kitengela Adventist School, we go beyond academics to offer a well-rounded education that shapes the heart, mind,
+    and character of every learner. Our Christ-centered approach ensures that students not only excel in their studies but
+    also grow in faith, discipline, and integrity. We pride ourselves on a warm, family-like environment where every child
+    is known, valued, and supported. With a team of qualified, passionate educators, modern learning facilities, and a 
+    balanced curriculum that integrates academics, spiritual growth, sports, and creative arts, we equip learners with the
+    skills and values they need to succeed in life. Our commitment to excellence, small class sizes, and individual attention 
+    make Kitengela Adventist School a trusted choice for parents who want the very best for their children</p>
+  </div>
+  <section class="content-section" data-aos="fade-up">
+    <h2 style="text-align:center; color:#1589FF;">Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-box">
+        <i class="fas fa-praying-hands"></i>
+        <h4>Faith</h4>
+      </div>
+      <div class="value-box">
+        <i class="fas fa-users"></i>
+        <h4>Respect</h4>
+      </div>
+      <div class="value-box">
+        <i class="fas fa-star"></i>
+        <h4>Excellence</h4>
+      </div>
+      <div class="value-box">
+        <i class="fas fa-heart"></i>
+        <h4>Love</h4>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Core Values Section -->
+  <section class="content-section" data-aos="fade-up">
+    <h2 style="text-align:center; color:#1589FF;">Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-box">
+        <i class="fas fa-praying-hands"></i>
+        <h4>Faith</h4>
+      </div>
+      <div class="value-box">
+        <i class="fas fa-users"></i>
+        <h4>Respect</h4>
+      </div>
+      <div class="value-box">
+        <i class="fas fa-star"></i>
+        <h4>Excellence</h4>
+      </div>
+      <div class="value-box">
+        <i class="fas fa-heart"></i>
+        <h4>Love</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Devotional Box with Original JavaScript -->
+  <div id="daily-verse" class="devotional-box"></div>
+  <script>
+    const verses = [
+      `"Train up a child in the way he should go." – Proverbs 22:6`,
+      `"I can do all things through Christ who strengthens me." – Philippians 4:13`,
+      `"The fear of the Lord is the beginning of wisdom." – Proverbs 9:10`,
+      `"Let the little children come to me..." – Matthew 19:14`
+    ];
+    const verseEl = document.getElementById("daily-verse");
+    const random = Math.floor(Math.random() * verses.length);
+    verseEl.textContent = verses[random];
+  </script>
+  <script>
+    // Enable tap-to-open on mobile with navigation fix
+    document.querySelectorAll(".dropdown > a").forEach(link => {
+      let isFirstClick = true;
+      link.addEventListener("click", function (e) {
+        const parent = this.parentElement;
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile && parent.classList.contains("dropdown")) {
+          if (isFirstClick) {
+            e.preventDefault(); // Prevent navigation on first click to show dropdown
+            parent.classList.toggle("active");
+            isFirstClick = false;
+          } else {
+            // Allow navigation on second click
+            window.location.href = this.href;
+          }
+        }
+      });
+      // Reset isFirstClick when dropdown is closed
+      link.addEventListener("touchend", function () {
+        setTimeout(() => { isFirstClick = true; }, 300);
+      });
+    });
+  </script>
+
+  <!-- Flip Card Styles -->
+  <style>
+    .flip-container {
+      perspective: 1000px;
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .flip-card {
+      width: 300px;
+      height: 300px;
+      text-align: center;
+      position: relative;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    .flip-card-front .overlay, .flip-card-back .overlay {
+      background-color: rgba(0, 0, 0, 0.4); /* semi-transparent */
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+
+    .submenu {
+      display: none;
+      list-style: none;
+      padding: 0;
+    }
+    .dropdown.active .submenu {
+      display: block;
+    }
+  </style>
+
+  <!-- Flip Card 1 -->
+  <div class="flip-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" style="background-image: url('pic81.jpg');">
+          <div class="overlay">
+            <p>🎓 Academic Programs<br>Explore our curriculum</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="background-image: url('pic71.jpg');">
+          <div class="overlay">
+            <p>From STEM to the arts—your child thrives here!</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <hr style="margin: 30px auto; border-color: #444; width: 90%;" />
+  <!-- Flip Card 2 -->
+  <div class="flip-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" style="background-image: url('pic70.jpg');">
+          <div class="overlay">
+            <p>🛡 Life at School<br>Beyond the classroom</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="background-image: url('pic4.png');">
+          <div class="overlay">
+            <p>Where students explore, lead, and connect!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <footer style="text-align: center; padding: 10px; background-color: #f2f2f2; font-size: 14px;">
-  © 2025 Kitengela Adventist School. All rights reserved. <br>
-  Developed by 
-<a href="https://wa.me/254735348043?text=Hey%20ShuleTech%2C%20I%20just%20explored%20your%20website%20and%20I%E2%80%99m%20interested%20in%20learning%20more%20about%20the%20services%20you%20offer.%20Could%20you%20please%20share%20further%20details%3F" 
-   target="_blank" 
-   style="color: #25D366; text-decoration: none;">
-   ShuleTech
-</a>
+  <!-- Flip Card 3 -->
+  <div class="flip-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" style="background-image: url('bgr.jpg');">
+          <div class="overlay">
+            <p>📝 Enroll Today<br>Now accepting applications!</p>
+          </div>
+        </div>
+        <div class="flip-card-back" style="background-image: url('pic33.jpg');">
+          <div class="overlay">
+            <p>Discover your place in our community!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</footer>
-<!-- Scroll-to-Top Button -->
+  <section class="parallax-section">
+    <div class="parallax-content">
+      <div data-aos="fade-up">
+        <h2>Our Mission </h2>
+        <p>To provide holistic Christian education that nurtures every child in Christ-like values and academic excellence.</p>
+      </div>
 
-<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
-<i class="fas fa-arrow-up"></i>
-</button>
+      <div class="features">
+        <img src="book.png" alt="Book Icon">
+        <img src="class.jpg" alt="Classroom">
+        <div data-aos="fade-up">
+          <h3>Empowering Minds, Nurturing Faith</h3>
+          <p>At Kitengela Adventist School, we offer quality
+          Christian education that shapes character, 
+          inspires excellence,and prepares students
+          for a purposeful future.</p>
+        </div>
+      </div>
+      <div class="features">
+        <img src="top.png" alt="Top Icon">
+        <img src="grad.jpg" alt="Graduation">
+        <div data-aos="fade-up" >
+          <h3>Stepping into a Bright Future</h3>
+          <p>Our kindergarten graduates are confident,
+          curious, and ready for the next exciting
+          chapter in upper primary—growing in wisdom, 
+          joy, and faith every step of the way.</p>
+        </div>
+      </div>
+      <div class="features">
+        <img src="clt.png" alt="Culture Icon">
+        <img src="unity.jpg" alt="Unity">
+        <div data-aos="fade-up">
+          <h3>Celebrating Our Roots</h3>
+          <p>At Kitengela Adventist School, we value and celebrate cultural 
+          diversity as a vital part of learning. Through music, language, dress, 
+          and traditions, our learners gain a deeper appreciation of their heritage
+          while respecting others—building unity, identity, and pride in who they are.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <section class="video-section" data-aos="fade-up">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="flaggg.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
-<script>
-    const navbar = document.getElementById("navbar");
-    const menuToggle = document.querySelector(".menu-toggle");
-    const dropdowns = document.querySelectorAll(".dropdown");
-    const mascotQuote = document.getElementById("mascot-quote");
-    const chatbotToggle = document.querySelector(".chatbot-toggle");
-    const chatbotBox = document.getElementById("chatbot-box");
+    <div class="video-overlay-content">
+      <div class="title-container">
+        <div class="line left"></div>
+        <h1><b>Growing Beyond The Classroom</b></h1>
+        <div class="line right"></div>
+      </div>
+      <p style="font-size:22px;" class="floating-text">At Kitengela Adventist School, we are committed to nurturing learners not only academically but also socially,
+      physically, and spiritually through a vibrant and well-structured co-curricular program. We recognize that every 
+      child is gifted uniquely, and we provide a platform where talents are discovered, nurtured, and celebrated. Our
+      Pathfinder Club instills discipline, leadership, and a deep sense of service among our learners, while our active
+      Scouts movement fosters teamwork, resilience, and a love for the outdoors.
+      </p>
+      <p style="font-size:22px;" class="floating-text">Our school choir continues to set high standards through its inspiring performances, both in school and during 
+      external events. We are especially proud of our enthusiastic participation in national and regional music festivals,
+      where our learners showcase their vocal, instrumental, and cultural talents while gaining confidence and stage
+      experience. These festivals not only promote artistic expression but also help students appreciate Kenya’s rich
+      cultural diversity.</p>
+      <p style="font-size:22px;" class="floating-text">In the field of sports, our pupils excel in football, athletics, and other games that promote physical fitness, 
+      discipline, and teamwork. Academic clubs such as debate and public speaking sharpen their communication and critical
+      thinking skills, while drama and creative arts provide outlets for expression and imagination.
+      </p>
+      <p style="font-size:22px;" class="floating-text">Through all these activities, we aim to develop well-rounded individuals who are confident, respectful, and ready to
+      contribute positively to society. At Kitengela Adventist School, every co-curricular activity is an opportunity to grow,
+      lead, and shine.</p>
+      <p style="font-size:22px;" class="floating-text">At Kitengela Adventist School, we are committed to nurturing learners not only academically but also socially,
+      physically, and spiritually through a vibrant and well-structured co-curricular program. We recognize that every 
+      child is gifted uniquely, and we provide a platform where talents are discovered, nurtured, and celebrated. Our
+      Pathfinder Club instills discipline, leadership, and a deep sense of service among our learners, while our active
+      Scouts movement fosters teamwork, resilience, and a love for the outdoors.
+      </p>
+      <p style="font-size:22px;" class="floating-text">Our school choir continues to set high standards through its inspiring performances, both in school and during 
+      external events. We are especially proud of our enthusiastic participation in national and regional music festivals,
+      where our learners showcase their vocal, instrumental, and cultural talents while gaining confidence and stage
+      experience. These festivals not only promote artistic expression but also help students appreciate Kenya’s rich
+      cultural diversity.</p>
+      <p style="font-size:22px;" class="floating-text">In the field of sports, our pupils excel in football, athletics, and other games that promote physical fitness, 
+      discipline, and teamwork. Academic clubs such as debate and public speaking sharpen their communication and critical
+      thinking skills, while drama and creative arts provide outlets for expression and imagination.
+      </p>
+      <p style="font-size:22px;" class="floating-text">Through all these activities, we aim to develop well-rounded individuals who are confident, respectful, and ready to
+      contribute positively to society. At Kitengela Adventist School, every co-curricular activity is an opportunity to grow,
+      lead, and shine.</p>
+    </div>
+  </section>
+  <hr class="section-divider">
+  <div class="title-container">
+    <div class="line left"></div>
+    <h3 style="color:#87ceeb; ">What Makes kitengela Adventist School<br> Worth Every Shilling</h3>
+    <div class="line right"></div>
+  </div>
+  <div class="value-grid">
+    <div class="value-box" data-aos="zoom-in">
+      <i class="fas fa-cross"></i>
+      <h4>Faith-Based Excellence</h4>
+      <p>We raise achievers grounded in God’s Word.</p>
+    </div>
+    <div class="value-box" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h4>Certified & Caring Staff</h4>
+      <p>Our team combines training with compassion.</p>
+    </div>
+    <div class="value-box" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fas fa-music"></i>
+      <h4>Music & Talent Empowerment</h4>
+      <p>National music festival finalists — three years running.</p>
+    </div>
+    <div class="value-box" data-aos="zoom-in" data-aos-delay="300">
+      <i class="fas fa-bible"></i>
+      <h4>Daily Devotions</h4>
+      <p>Students begin each day with God’s Word.</p>
+    </div>
+    <div class="value-box" data-aos="zoom-in" data-aos-delay="400">
+      <i class="fas fa-school"></i>
+      <h4>Modern Facilities</h4>
+      <p>Clean classrooms, digital labs, and secure spaces.</p>
+    </div>
+    <div class="value-box" data-aos="zoom-in" data-aos-delay="500">
+      <i class="fas fa-star"></i>
+      <h4>100% Parent Trust Rate</h4>
+      <p>Our learners stay — and thrive — for a reason.</p>
+    </div>
+  </div>
+  </br>
+  </br>
+  <div class="chatbot-toggle" onclick="toggleChatbot()">Need Help?</div>
+  <div class="chatbot-box" id="chatbotBox">
+    <div class="chat-header">Admissions Assistant</div>
+    <div class="chat-content" id="chatContent">
+      <p><strong>KAS:</strong> Hi! I can help with admissions. Ask a question below!</p>
+    </div>
+    <input type="text" id="chatInput" placeholder="Type your question..." onkeydown="if(event.key==='Enter') handleChat()" />
+  </div>
+  
+  <div class="floating-mascot">
+    <div class="quote-bubble" id="quote-text">Every child is a star.</div>
+  </div>
+  <div class="slideshow-wrapper" style="width: 100vw; overflow: hidden;">
+    <div class="slideshow-container" style="width: 100%; max-width: none;">
+      <div class="mySlides fade">
+        <img src="bgr.jpg" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="pic10.jpg" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="pic9.png" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="pic2.png" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="bgr.jpg" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="homeback.jpeg" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="pic9.png" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="pic4.png" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="homeback.jpeg" style="width:100%"/>
+      </div>
+      <div class="mySlides fade">
+        <img src="pic4.png" style="width:100%"/>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
 
-    // Toggle the main navigation menu on mobile
-    function toggleMenu() {
-        navbar.classList.toggle("active");
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
+  </script>
+  <br/>
+  <br/>
+  <br/>
+  <div class="content-section" data-aos="fade-up">
+    <h3>Academic Stages – CBC Curriculum</h3>
+    <div class="cbc-stage">
+      <h4><i class="fas fa-child"></i> Early Years Education (Pre-Primary 1 &amp; 2)</h4>
+      <p><em>Ages: 4–5 years</em></p>
+      <p>Focus on <span class="highlight">foundational skills</span> in literacy, numeracy, spiritual growth, social skills, and physical development through play-based learning.</p>
+    </div>
+    <div class="cbc-stage">
+      <h4><i class="fas fa-pencil-alt"></i> Lower Primary (Grades 1–3)</h4>
+      <p><em>Ages: 6–8 years</em></p>
+      <p>Core learning in literacy, Kiswahili, mathematics, religious education, environmental activities, and life skills. Emphasis on nurturing <span class="highlight">curiosity</span> and <span class="highlight">moral responsibility</span>.</p>
+    </div>
+    <div class="cbc-stage">
+      <h4><i class="fas fa-leaf"></i> Middle Primary (Grades 4–6)</h4>
+      <p><em>Ages: 9–11 years</em></p>
+      <p>Learners explore a broader curriculum including science, home science, agriculture, creative arts, and technology. Evaluation includes classroom-based assessments and practical activities.</p>
+    </div>
+    <div class="cbc-stage">
+      <h4><i class="fas fa-graduation-cap"></i> Junior Secondary School (Grades 7–9)</h4>
+      <p><em>Ages: 12–14 years</em></p>
+      <p>A critical stage that prepares learners for senior school and future careers. Subjects offered include:</p>
+      <ul>
+        <li>Integrated Science</li>
+        <li>Mathematics</li>
+        <li>Christian Religious Education</li>
+        <li>Business Studies</li>
+        <li>Pre-Technical Studies</li>
+        <li>Health Education</li>
+        <li>ICT, Sports, and Life Skills</li>
+      </ul>
+    </div>
+    <p class="fade-in-out-text">We guide learners through career pathways and talent development while upholding Adventist principles and
+    academic excellence.
+    </p>
+  </div>
 
-    // Handle dropdowns on both hover (desktop) and click (mobile)
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener("click", function(event) {
-            // Check if on a mobile device
-            if (window.innerWidth <= 768) {
-                event.preventDefault(); // Prevent link from navigating
-                this.classList.toggle("active");
-            }
-        });
+  <div class="content-section" data-aos="fade-in">
+    <h1> Quick facts</h1>
+    <ul class="floating-text">
+      <li>🔹 500+ students</li>
+      <li>🔹 10+ Years of service</li>
+      <li>🔹 100% Christian Curriculum</li>
+    </ul>
+  </div>
+  <section class="cta-banner" data-aos="fade-up">
+    <h2>Be Part of the Story — Join Kitengela Adventist School Today</h2>
+    <a href="https://wa.me/254722561460?text=Hello%20Kitengela%20Adventist%20School%2C%20I%27m%20interested%20in%20applying%20for%20admission" 
+      class="cta-btn" target="_blank">
+      <i class="fab fa-whatsapp" style="margin-right:8px;"></i> Apply Now
+    </a>
+  </section>
+  <section class="testimonial-slider-section" data-aos="fade-up">
+    <h2 style="text-align:center; color:#1589FF;">What Parents & Students Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial-slide">“KAS helped my son grow spiritually and academically.” – Parent</div>
+      <div class="testimonial-slide">“I love my teachers and Bible lessons.” – Grade 4 Learner</div>
+      <div class="testimonial-slide">“I feel ready for high school because of KAS.” – JSS Student</div>
+    </div>
+  </section>
 
-        // Add hover functionality for desktop
-        dropdown.addEventListener("mouseenter", function() {
-            if (window.innerWidth > 768) {
-                this.classList.add("active");
-            }
-        });
-        dropdown.addEventListener("mouseleave", function() {
-            if (window.innerWidth > 768) {
-                this.classList.remove("active");
-            }
-        });
-    });
-
-    const mascotQuotes = [
-        "Welcome to our website!",
-        "Learning is fun!",
-        "Discover your potential here.",
-        "With God, we excel!"
-    ];
-
-    let currentMascotQuote = 0;
-    function updateMascotQuote() {
-        mascotQuote.textContent = mascotQuotes[currentMascotQuote];
-        currentMascotQuote = (currentMascotQuote + 1) % mascotQuotes.length;
-    }
-    updateMascotQuote();
-    setInterval(updateMascotQuote, 10000);
-
+  <script>
     function toggleChatbot() {
-        if (chatbotBox.style.display === "none" || chatbotBox.style.display === "") {
-            chatbotBox.style.display = "block";
-        } else {
-            chatbotBox.style.display = "none";
-        }
+      const box = document.getElementById("chatbotBox");
+      box.style.display = box.style.display === "block" ? "none" : "block";
     }
 
-    // Scroll to top button functionality
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    window.onscroll = function() { scrollFunction() };
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    function handleChat() {
+      const input = document.getElementById("chatInput");
+      const userMsg = input.value.trim();
+      if (!userMsg) return;
+
+      const chat = document.getElementById("chatContent");
+      chat.innerHTML += `<p><strong>You:</strong> ${userMsg}</p>`;
+
+      const msg = userMsg.toLowerCase();
+      let reply = "";
+
+      if (msg.match(/\b(hi|hello|hey|habari|sasa|good (morning|afternoon|evening))\b/)) {
+        reply = "Hello! Welcome to Kitengela Adventist School. You can ask about fees, admission, classes, term dates, boarding, or WhatsApp help.";
+      } 
+      else if (msg.includes("fee") || msg.includes("fees") || msg.includes("cost")) {
+        reply = `You can view our full 2025 school fee structure by visiting the <a href="admission.html#school-fees" target="_blank">School Fees section</a> under Admissions.`;
+      } 
+      else if (msg.includes("apply") || msg.includes("admission") || msg.includes("register") || msg.includes("join")) {
+        reply = `To apply, scroll down to the <strong>Admissions</strong> section, then click the <em>Process</em> button. There, you’ll find the full online application form to fill and submit.`;
+      } 
+      else if (
+        msg.includes("requirement") || 
+        msg.includes("needed") || 
+        msg.includes("bring") || 
+        msg.includes("what do i need") || 
+        msg.includes("documents") ||
+        msg.includes("uniform") ||
+        msg.includes("stationery") ||
+        msg.includes("school supplies")
+      ) {
+        reply = `Sure! You can check the specific requirements by visiting our <a href="admission.html#class-requirements" target="_blank">Class Requirements section</a> on the Admissions page. Just select the learner's class and everything you need will be listed.`;
+      }
+      else if (msg.includes("boarding")) {
+        reply = "Currently, Kitengela Adventist School does not have boarding facilities. We focus on day scholar programs.";
+      }
+      else if (
+        msg.includes("thank") || 
+        msg.includes("asante") || 
+        msg.includes("good job") || 
+        msg.includes("bless") || 
+        msg.includes("appreciate") ||
+        msg.includes("grateful") ||
+        msg.includes("thank you")
+      ) {
+        const gratitudeReplies = [
+          "You're most welcome!",
+          "Asante sana! Happy to help.",
+          "God bless you too!",
+          "We’re here for you any time!",
+          "Glad I could assist you!"
+        ];
+        reply = gratitudeReplies[Math.floor(Math.random() * gratitudeReplies.length)];
+      } 
+      else if (msg.includes("contact") || msg.includes("reach") || msg.includes("call")) {
+        reply = 'You can contact us via phone or WhatsApp. Scroll to the <a href="index.html#footer" onclick="scrollToSection(\'footer\')">footer section</a> for details.';
+      } 
+      else if (msg.includes("whatsapp") || msg.includes("talk to someone")) {
+        reply = `Click <a href="https://wa.me/254722561460" target="_blank">here</a> to chat with our team on WhatsApp.`;
+      } 
+      else if (msg.includes("term") || msg.includes("calendar") || msg.includes("open")) {
+        reply = 'Term 2 begins on May 13th, 2025. Visit the <a href="#events" onclick="scrollToSection(\'events\')">events section</a> for updates.';
+      }
+      else {
+        reply = `
+          I'm still learning! But you can:
+          <ul>
+            <li><a href="admission.html#online-admission" target="_blank">Apply for Admission</a></li>
+            <li><a href="admission.html#class-requirements" target="_blank">View Class Requirements</a></li>
+            <li><a href="admission.html#school-fees" target="_blank">Check School Fees</a></li>
+          </ul>
+          Or <a href="https://wa.me/254722561460" target="_blank">chat with us on WhatsApp</a>.
+        `;
+      }
+
+      // Add friendly closing line
+      reply += " If you need anything, feel free to ask!";
+
+      chat.innerHTML += `<p><strong>KAS:</strong> ${reply}</p>`;
+      chat.scrollTop = chat.scrollHeight;
+      input.value = "";
+    }
+  </script>
+  <script>
+    let slides = document.querySelectorAll('.testimonial-slide');
+    let index = 0;
+
+    function showNextSlide() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+      index = (index + 1) % slides.length;
+    }
+
+    setInterval(showNextSlide, 4000); // every 4 seconds
+    window.onload = showNextSlide;
+  </script>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.494162947713!2d36.951080974046896!3d-1.4761921358612258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182fa01e04cf09d3%3A0xac969c1fe6a47c14!2sSeventh%20Day%20Adventist%20Church%20Kitengela%20Central!5e0!3m2!1ssw!2ske!4v1746686801429!5m2!1ssw!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ 
+  <section class="foot">
+    <section class="footer">
+      <section>
+        <h3>Kitengela Adventist School</h3>
+        <p>Kenya-Nairobi, Kajiado County</p>
+        <p>Kitengela township, Prison Rd, P.O.Box: 306-00242</p>
+      </section>
+      <section>
+        <h3>Management Office</h3>
+        <p>Chairman: +254 26487953</p>
+        <p>Head Teacher: +254 722 561 460</p>
+      </section>
+      <section>
+        <h3>Secretary</h3>
+        <p>Secretary: +254 717886880</p>
+        <p>Email: kitengelaadventistacademy@gmail.com</p>
+      </section>
+    </section>
+    <div class="footer-logo-box">
+      <img src="kaslogo.jpg" alt="KAS Logo" class="footer-logo" />
+      <p class="footer-tagline">With God We Excel</p>
+    </div>
+    <div class="navbar-regular">
+      <section class="navbar1">
+        <ul class="navbar-regular" id="navbar">
+          <li class="dropdown">
+            <a href="index.html">Our School</a>
+            <ul class="dropdown-content">
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="results.html">Academic Results</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="education.html">Education</a>
+            <ul class="dropdown-content">
+              <li><a href="jss.html">Junior Secondary School</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="admission.html">Admission</a>
+            <ul class="dropdown-content">
+              <li><a href="process.html">Process</a></li>
+              <li><a href="fees.html">School Fees</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="school-life.html">School Life</a>
+            <ul class="dropdown-content">
+              <li><a href="uniform.html">School Uniform</a></li>
+              <li><a href="bus.html">Bus Routes</a></li>
+              <li><a href="news.html">News & Events</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </section>
+    </div>
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <footer style="background-color: white; color: black; padding: 50px 0;">
+      <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 80px; padding: 0 20px;">
+        <!-- School Info -->
+        <div style="flex: 1 1 250px;">
+          <div style="flex: 1 1 250px;">
+        <!-- Social Media -->
+        <div style="flex: 1 1 200px;">
+          <h4 style="margin-bottom: 15px;">Follow Us</h4>
+          <div style="display: flex; gap: 15px;">
+            <a href="#" style="color: lightblue; font-size: 40px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="color: blue; font-size: 40px;"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" style="color: black; font-size: 40px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: red; font-size: 40px;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin: 30px auto; border-color: #444; width: 90%;" />
+
+      <footer style="text-align: center; padding: 10px; background-color: #f2f2f2; font-size: 14px;">
+        © 2025 Kitengela Adventist School. All rights reserved. <br>
+        Developed by 
+        <a href="https://wa.me/254735348043?text=Hey%20ShuleTech%2C%20I%20just%20explored%20your%20website%20and%20I%E2%80%99m%20interested%20in%20learning%20more%20about%20the%20services%20you%20offer.%20Could%20you%20please%20share%20further%20details%3F" 
+          target="_blank" 
+          style="color: #25D366; text-decoration: none;">
+          ShuleTech
+        </a>
+      </footer>
+      <!-- Scroll-to-Top Button -->
+      <button id="scrollToTopBtn" title="Go to top">
+        <i class="fas fa-chevron-up"></i>
+      </button>
+
+      <!-- Font Awesome for icon -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+      <style>
+        #scrollToTopBtn {
+          position: fixed;
+          bottom: 40px;
+          right: 30px;
+          z-index: 99;
+          background-color: #0d6efd;
+          color: white;
+          border: none;
+          outline: none;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 18px;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          transition: background-color 0.3s ease;
+        }
+
+        #scrollToTopBtn:hover {
+          background-color: #0b5ed7;
+        }
+        .footer-logo-box {
+          text-align: center;
+          margin: 50px auto 20px;
+        }
+
+        .footer-logo {
+          width: 160px;
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 0.8s ease-in-out;
+          animation: glowPulse 4s ease-in-out infinite, floatBounce 6s ease-in-out infinite;
+          border-radius: 8px;
+        }
+
+        .footer-logo.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .footer-tagline {
+          font-size: 18px;
+          font-weight: bold;
+          color: #1589FF;
+          margin-top: 10px;
+          opacity: 0;
+          animation: fadeInTagline 2s ease 0.5s forwards;
+        }
+
+        /* Glow effect */
+        @keyframes glowPulse {
+          0% { box-shadow: 0 0 5px #1589FF; }
+          50% { box-shadow: 0 0 20px #1589FF; }
+          100% { box-shadow: 0 0 5px #1589FF; }
+        }
+
+        /* Floating bounce */
+        @keyframes floatBounce {
+          0%   { transform: translateY(0); }
+          50%  { transform: translateY(-8px); }
+          100% { transform: translateY(0); }
+        }
+
+        /* Tagline fade-in */
+        @keyframes fadeInTagline {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      </style>
+
+      <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function () {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             scrollToTopBtn.style.display = "flex";
-        } else {
+          } else {
             scrollToTopBtn.style.display = "none";
-        }
-    }
-
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Counter animation
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const inc = target / speed;
-            if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
-                setTimeout(updateCount, 1);
-            } else {
-                counter.innerText = target;
-            }
+          }
         };
-        updateCount();
-    });
 
-    // Testimonial slider
-    const slides = document.querySelectorAll('.testimonial-slide');
-    let currentSlide = 0;
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        slides[index].classList.add('active');
-    }
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-    showSlide(currentSlide);
-    setInterval(nextSlide, 5000);
+        scrollToTopBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      </script>
+      <style>
+        .counter-box {
+          width: 150px;
+          font-size: 20px;
+          font-weight: bold;
+          color: #333;
+        }
+        .counter {
+          font-size: 48px;
+          color: #1589FF;
+          margin-bottom: 10px;
+        }
+      </style>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const counters = document.querySelectorAll('.counter');
+          counters.forEach(counter => {
+            counter.innerText = '0';
+            const update = () => {
+              const target = +counter.getAttribute('data-target');
+              const count = +counter.innerText;
+              const increment = Math.ceil(target / 200);
+              if (count < target) {
+                counter.innerText = count + increment;
+                setTimeout(update, 20);
+              } else {
+                counter.innerText = target + (target === 100 ? '%' : '+');
+              }
+            };
+            update();
+          });
+        });
+      </script>
+    </section>
+    <script>
+      function toggleMenu() {
+        const navbar = document.getElementById("navbar");
+        navbar.classList.toggle("active");
 
-    // Star animation
-    for (let i = 0; i < 100; i++) {
-        let star = document.createElement("div");
-        star.className = "star";
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.top = Math.random() * -100 + "vh";
-        star.style.animationDuration = (Math.random() * 5 + 5) + "s";
-        document.body.appendChild(star);
-    }
-</script>
+        // For dropdowns inside mobile navbar
+        const dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach(drop => {
+          drop.addEventListener("click", function () {
+            this.classList.toggle("active");
+          });
+        });
+      }
+    </script>
+
+    <script>
+      const quotes = [
+        "Every child is a star.",
+        "Rooted in Christ, Rising in Excellence.",
+        "Discipline + Dedication = Destiny.",
+        "Grow in wisdom and in faith."
+      ];
+
+      let index = 0;
+      setInterval(() => {
+        document.getElementById('quote-text').textContent = quotes[index];
+        index = (index + 1) % quotes.length;
+      }, 10000); // Change every 10 seconds
+    </script>
+
+    <script>
+      window.addEventListener('scroll', () => {
+        const logo = document.querySelector('.footer-logo');
+        const rect = logo.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          logo.classList.add('visible');
+        }
+      });
+    </script>
 </body>
 </html>
-
